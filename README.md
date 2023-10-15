@@ -27,6 +27,7 @@
 * 品物詳細
 * マルチ検索(JQuery)
 * タグ
+* ジャンル
 * 品物を捨てた理由、品物を残した理由の閲覧
 
 - 登録しているユーザー
@@ -41,7 +42,6 @@
 * フォロー機能
 * チャット(Action Cable)
 * マイページ
-  * フォルダで整理、管理
 * 通知機能
 
 
@@ -52,4 +52,4 @@
   * 全ての品物のCRUD
 
 ## 画面遷移図
-https://www.figma.com/file/CoB2D7wLJ0Kr24SehVVR5w/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=A9DGtl1aGJFjp7p7-1
+https://www.figma.com/file/CoB2D7wLJ0Kr24SehVVR5w/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=Jb9vikx2fgg5Em4T-1
