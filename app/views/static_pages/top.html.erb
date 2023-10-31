@@ -1,0 +1,34 @@
+<div class="bg-top-page-bg min-h-screen bg-cover bg-center object-cover">
+  <header class="p-4 text-end mx-auto container">
+    <nav>
+      <div class="space-x-12 hidden md:block md:text-end">
+        <%= link_to "会員登録", "#", class:"hover:text-lime-800 transition-all duration-300" %>
+        <%= link_to "ログイン", "#", class:"hover:text-lime-800 transition-all duration-300" %>
+      </div>
+      <div class="md:hidden">
+        <i class="fa-solid fa-bars hover:text-lime-800 transition-all duration-300"></i>
+      </div>
+    </nav>
+  </header>
+  <div>
+    <div class="text-center">
+      <h1 class="font-bold text-3xl sm:text-3xl md:text-5xl lg:text-7xl mb-5 mt-8">DANSYARIへようこそ！</h1>
+      <p class="text-1xl sm:text-xl mb-10 mx-10">捨てようか迷っている品物を思い出と共に投稿して断捨離をサクサク進めるためのサービスです。</p>
+    </div>
+  </div>
+  <form>   
+    <label for="default-search" class="mb-2 text-xl font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative mx-20 sm:mx-40 md:mx-50 lg:mx-80 mt-40">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      </div>
+      <input type="search" id="default-search" class="block w-full p-4 px-10 text-sm text-gray-900 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-blue-500" placeholder="品物名、ジャンル、タグ" required>
+      <button type="submit" class="absolute top-0 right-0 p-4 text-sm font-medium h-full text-gray rounded-r-lg focus:ring-4 focus:outline-none dark:hover:text-gray">
+        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+        </svg>
+        <span class="sr-only">Search</span>
+      </button>
+    </div>
+</form>
+
+</div>
