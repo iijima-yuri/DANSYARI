@@ -338,7 +338,7 @@ DEPENDENCIES
   selenium-webdriver
   sentry-rails (~> 5.12)
   sentry-ruby (~> 5.12)
-  sorcery
+  sorcery (= 0.16.5)
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 2.0)
