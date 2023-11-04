@@ -1,0 +1,11 @@
+<header class="container p-4 mx-auto text-end">
+  <nav>
+    <div class="hidden space-x-5 md:block md:text-end">
+      <%= link_to "マイページ", "#", class:"hover:text-lime-800 transition-all duration-300 mr-5 fa-solid fa-user" %>
+      <%= link_to "ログアウト", logout_path, method: :delete, class: "hover:text-lime-800 transition-all duration-300 fa-solid fa-right-from-bracket" %>
+    </div>
+    <div class="md:hidden">
+      <i class="transition-all duration-300 fa-solid fa-bars hover:text-lime-800"></i>
+    </div>
+  </nav>
+</header>
