@@ -14,6 +14,8 @@ module.exports = {
       },
       backgroundImage: {
         'top-page-bg': "url('living-room.jpg')",
+        'login-page-bg': "url('image3.jpg')",
+        'users-new-bg': "url('image4.jpg')",
       },
     },
   },
