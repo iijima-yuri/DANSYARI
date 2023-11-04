@@ -58,7 +58,10 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :test do
@@ -77,3 +80,5 @@ gem "sentry-rails", "~> 5.12"
 
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem 'sorcery', '0.16.5'

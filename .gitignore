@@ -34,8 +34,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-.DS_Store
+/vendor/bundle
 
-vendor/bundle
+.DS_Store
 /app/assets/builds/*
 !/app/assets/builds/.keep
