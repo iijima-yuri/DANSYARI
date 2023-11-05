@@ -82,3 +82,5 @@ gem "sentry-rails", "~> 5.12"
 gem "tailwindcss-rails", "~> 2.0"
 
 gem 'sorcery', '0.16.5'
+
+gem 'rails-i18n'
