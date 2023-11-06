@@ -1,0 +1,20 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    logout: 'ログアウト'
+    register: 'アカウント登録'
+  users:
+    new:
+      title: 'アカウント登録'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      password_forget: 'パスワードをお忘れの方は'
+      password_forget_this: 'こちら'
+      google_login: 'Googleアカウントでログイン'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
