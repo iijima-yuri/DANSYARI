@@ -3,6 +3,11 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     register: 'アカウント登録'
+    my_page: 'マイページ'
+    notice: '通知'
+    contact: 'お問い合わせ'
+    privacy_policy: 'プライバシーポリシー'
+    terms_of_service: '利用規約'
   users:
     new:
       title: 'アカウント登録'
