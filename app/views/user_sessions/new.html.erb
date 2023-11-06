@@ -2,33 +2,33 @@
   <header class="container p-4 mx-auto text-end">
     <nav>
       <div class="md:text-end">
-        <%= link_to "アカウント登録", new_user_path, class:"hover:text-lime-800 transition-all duration-300 space-x-12 fa-solid fa-right-to-bracket" %>
+        <%= link_to t('users.new.title'), new_user_path, class:"hover:text-lime-800 transition-all duration-300 space-x-12 fa-solid fa-right-to-bracket" %>
       </div>
     </nav>
   </header>
   <div>
     <div class="text-center">
-      <h1 class="mt-20 mb-10 text-3xl font-bold sm:text-3xl md:text-4xl lg:text-6xl">ログイン</h1>
+      <h1 class="mt-20 mb-10 text-3xl font-bold sm:text-3xl md:text-4xl lg:text-6xl"><%= t('.title') %></h1>
       <div>
         <%= form_with model: @user, local: true do |f| %>
           <div class="form-graup">
             <i class="fa-solid fa-envelope"></i>
-            <%= f.label :メールアドレス, class:"font-bold text-xl" %><br>
+            <%= f.label :email, User.human_attribute_name(:email), class:"font-bold text-xl" %><br>
             <%= f.email_field :email, placeholder:"sample@example.com", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
           </div>
           <div class="form-graup">
             <i class="fa-solid fa-lock"></i>
-            <%= f.label :パスワード, class:"font-bold text-xl " %><br>
+            <%= f.label :password, User.human_attribute_name(:password), class:"font-bold text-xl " %><br>
             <%= f.password_field :password, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 w-2/5 mb-5" %>
-            <p>パスワードをお忘れの方は<%= link_to 'こちら', "#", class:"underline hover:text-white" %></p>
+            <p><%= t('.password_forget') %><%= link_to t('.password_forget_this'), "#", class:"underline hover:text-white" %></p>
           </div>
-          <%= f.submit 'ログイン', class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-10 py-3 px-20 font-bold mt-10 text-xl"%>
+          <%= f.submit t('defaults.login'), class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-10 py-3 px-20 font-bold mt-10 text-xl"%>
         <% end %>
         <p class="mt-10 mb-10">================================ <span class="text-xl font-bold"> or </span>================================</p>
       </div>
       <div class="flex items-end justify-center space-x-1">
         <i class="h-10 mr-3 text-3xl text-red-600 fa-brands fa-google"></i>
-        <%= link_to 'Googleアカウントでログイン', "#", class: "hover:text-white h-10 text-2xl font-bold" %></p>
+        <%= link_to t('.google_login'), "#", class: "hover:text-white h-10 text-2xl font-bold" %></p>
       </div>
     </div>
   </div>

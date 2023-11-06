@@ -2,36 +2,36 @@
   <header class="container p-4 mx-auto text-end">
     <nav>
       <div class="md:text-end">
-        <%= link_to "ログイン", login_path, class:"fa-solid fa-right-to-bracket hover:text-lime-800 transition-all duration-300 stroke-0" %>
+        <%= link_to t('defaults.login'), login_path, class:"fa-solid fa-right-to-bracket hover:text-lime-800 transition-all duration-300 stroke-0" %>
       </div>
     </nav>
   </header>
   <div>
     <div class="text-center">
-      <h1 class="mt-20 mb-10 text-3xl font-bold sm:text-3xl md:text-4xl lg:text-6xl">アカウント登録</h1>
+      <h1 class="mt-20 mb-10 text-3xl font-bold sm:text-3xl md:text-4xl lg:text-6xl"><%= t('.title') %></h1>
       <div>
         <%= form_with model: @user, local: true do |f| %>
           <div class="form-graup">
             <i class="fa-solid fa-user"></i>
-            <%= f.label :アカウント名, class:"font-bold text-xl mb-1" %><br>
+            <%= f.label :name, User.human_attribute_name(:name), class:"font-bold text-xl mb-1" %><br>
             <%= f.text_field :name, placeholder:"eri", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
           </div>
           <div class="form-graup">
             <i class="fa-solid fa-envelope"></i>
-            <%= f.label :メールアドレス, class:"font-bold text-xl" %><br>
+            <%= f.label :email, User.human_attribute_name(:email), class:"font-bold text-xl" %><br>
             <%= f.email_field :email, placeholder:"sample@example.com", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
           </div>
           <div class="form-graup">
             <i class="fa-solid fa-lock"></i>
-            <%= f.label :パスワード, class:"font-bold text-xl " %><br>
+            <%= f.label :password, User.human_attribute_name(:password), class:"font-bold text-xl " %><br>
             <%= f.password_field :password, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
           </div>
           <div class="form-graup">
             <i class="fa-solid fa-lock"></i>
-            <%= f.label :パスワード（確認）, class:"font-bold text-xl" %><br>
+            <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation), class:"font-bold text-xl" %><br>
             <%= f.password_field :password_confirmation, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
           </div>
-          <%= f.submit 'アカウント登録', class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-4 py-3 px-20 font-bold mt-10 text-xl"%>
+          <%= f.submit t('defaults.register'), class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-4 py-3 px-20 font-bold mt-10 text-xl"%>
         <% end %>
       </div>
     </div>
