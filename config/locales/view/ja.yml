@@ -23,3 +23,9 @@ ja:
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  items:
+    index:
+      title: '品物一覧'
+      no_result: '品物がありません'
