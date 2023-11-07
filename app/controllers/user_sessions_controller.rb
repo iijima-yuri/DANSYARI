@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  skip_before_action :require_login, only: %i[create new destroy]
+  skip_before_action :require_login, only: %i[create new]
 
   def new; end
 
@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    logout if logged_in?
+    logout
     redirect_to root_path, success: t('.success')
   end
 end
