@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  mount_uploader :item_image, ItemImageUploader
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 255 }
