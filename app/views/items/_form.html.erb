@@ -1,0 +1,30 @@
+<%= form_with model: item, local: true do |f| %>
+  <div class="-mx-2 md:flex">
+    <div class="px-10 mb-8 md:w-1/2">
+      <div class="form-group">
+        <%= f.label :name, Item.human_attribute_name(:name) %>
+        <%= f.text_field :name, class: "form-control w-3/5" %>
+      </div>
+      <div class="pt-3 form-group">
+        <%= image_tag item.item_image.url, id: 'preview', size:'400x400',data: { turbo: false } %>
+        <%= f.hidden_field :item_image_cache %>
+        <%= f.file_field :item_image, onchange: 'previewImage()', class: "form-control mt-3", accept: 'image/*' %>
+      </div>
+    </div>
+    
+    <div class="px-10 pb-5 md:w-1/2">
+      <div class="form-group">
+        <%= f.label :episode_content, Item.human_attribute_name(:episode_content) %><br>
+        <%= f.text_area :episode_content, class:"form-control h-24 w-full" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :reason_content, Item.human_attribute_name(:reason_content) %><br>
+        <%= f.text_area :reason_content, class:"form-control h-24 w-full" %>
+      </div>
+      <div class="text-center md:text-end">
+        <%= f.submit t('defaults.submission'), class:"bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded py-3 px-12 font-bold text-xl cursor-pointer" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+    
