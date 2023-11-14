@@ -1,0 +1,8 @@
+<div>
+  <ul class="pb-5">
+    <li class="pb-3 text-xl font-bold cursor-pointer"><%= t('items.index.name') %><%= link_to item.name, "#" %></li>
+    <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3" %></li>
+    <%# <li><%= item.episode_content %></li>
+    <li class="text-lg"><%= t('items.index.reason') %><%= item.reason_content %></li>
+  </ul>
+</div>

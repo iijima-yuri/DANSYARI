@@ -8,6 +8,7 @@ ja:
     contact: 'お問い合わせ'
     privacy_policy: 'プライバシーポリシー'
     terms_of_service: '利用規約'
+    submission: "投稿"
   users:
     new:
       title: 'アカウント登録'
@@ -29,3 +30,13 @@ ja:
     index:
       title: '品物一覧'
       no_result: '品物がありません'
+      name: '品物名：'
+      reason: '理由：'
+    new:
+      title: '投稿フォーム'
+      name: '品物名'
+      episode_content: '思い出エピソード'
+      reason_content: '理由'
+      item_image: '写真'
+      tag: 'タグ'
+      genre: 'ジャンル'
