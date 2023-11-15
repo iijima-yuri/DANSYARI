@@ -1,15 +1,26 @@
 ja:
-    activerecord:
-      models:
-        user: 'ユーザー'
-        item: '品物'
-      attributes:
-        user:
-          email: 'メールアドレス'
-          password: 'パスワード'
-          password_confirmation: 'パスワード確認'
-          name: 'アカウント名'
-        item:
-          name: '品物名'
-          episode_content: '思い出エピソード'
-          reason_content: '理由'
+  enums:
+    item:
+      reason_status:
+        trash: '捨てた'
+        stay: '残しておく'
+        worry: '悩んでいる'
+  activerecord:
+    models:
+      user: 'ユーザー'
+      item: '品物'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: 'アカウント名'
+      item:
+        name: '品物名'
+        episode_content: '思い出エピソード'
+        reason_content: '理由'
+        reason_status:
+      item/reason_status:
+        trash: '捨てた'
+        stay: '残しておく'
+        worry: '悩んでいる'

@@ -86,3 +86,5 @@ gem 'sorcery', '0.16.5'
 gem 'rails-i18n'
 
 gem 'carrierwave', '~> 3.0'
+
+gem 'enum_help'
