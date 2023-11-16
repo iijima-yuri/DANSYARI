@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :user
 
   enum reason_status: { trash: 0, stay: 1, worry: 2 }
+  enum status: { published: 0, unpublished: 1 }
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :episode_content, presence: true, length: { maximum: 65_535 }

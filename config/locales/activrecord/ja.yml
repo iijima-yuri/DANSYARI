@@ -3,8 +3,12 @@ ja:
     item:
       reason_status:
         trash: '捨てた'
-        stay: '残しておく'
+        stay: '残す'
         worry: '悩んでいる'
+      status:
+        draft: '下書き'
+        published: '公開する'
+        unpublished: '非公開にする'
   activerecord:
     models:
       user: 'ユーザー'
@@ -20,7 +24,3 @@ ja:
         episode_content: '思い出エピソード'
         reason_content: '理由'
         reason_status:
-      item/reason_status:
-        trash: '捨てた'
-        stay: '残しておく'
-        worry: '悩んでいる'
