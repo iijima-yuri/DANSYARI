@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_15_035902) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_15_092853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_15_035902) do
     t.datetime "updated_at", null: false
     t.string "item_image"
     t.integer "reason_status", default: 0, null: false, comment: "理由のステータス"
+    t.integer "status", default: 0, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
