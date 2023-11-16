@@ -23,12 +23,20 @@
         <%= f.label :reason_status, t('enums.item.reason_status.trash') %>
         <%= f.radio_button :reason_status, :stay %>
         <%= f.label :reason_status, t('enums.item.reason_status.stay') %>
-        <%= f.radio_button :reason_status, :trash %>
+        <%= f.radio_button :reason_status, :worry %>
         <%= f.label :reason_status, t('enums.item.reason_status.worry') %>
         
         <%= f.label :reason_content, Item.human_attribute_name(:reason_content) %><br>
         <%= f.text_area :reason_content, class:"form-control h-24 w-full" %>
       </div>
+
+      <div class="form-group">
+        <%= f.radio_button :status, :published %>
+        <%= f.label :status, t('enums.item.status.published') %>
+        <%= f.radio_button :status, :unpublished %>
+        <%= f.label :status, t('enums.item.status.unpublished') %>
+      </div>
+        
       <div class="text-center md:text-end">
         <%= f.submit t('defaults.submission'), class:"bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded py-3 px-12 font-bold text-xl cursor-pointer" %>
       </div>
