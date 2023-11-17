@@ -1,9 +1,9 @@
 <div class="mb-5">
   <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
-    <li class="pb-1 text-xl font-bold"><%= t('items.index.name') %><%= link_to item.name, item_path(item) %></li>
+    <li class="pb-1 text-xl font-bold"><%= t('defaults.name') %><%= link_to item.name, item_path(item) %></li>
     <li class="pb-1 text-xl font-bold">by：<%= link_to item.user.name , "#" %></li>
     <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3" %></li>
-    <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('items.index.reason') %></p>
+    <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
         <p class="text-lg"><%= item.reason_content %></p>
     </li>
   </ul>

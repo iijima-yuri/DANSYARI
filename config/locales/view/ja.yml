@@ -8,7 +8,11 @@ ja:
     contact: 'お問い合わせ'
     privacy_policy: 'プライバシーポリシー'
     terms_of_service: '利用規約'
-    submission: "投稿"
+    submission: '投稿'
+    name: '品物名：'
+    reason: '理由：'
+    edit: '編集'
+    destroy: '削除'
   users:
     new:
       title: 'アカウント登録'
@@ -30,8 +34,6 @@ ja:
     index:
       title: '品物一覧'
       no_result: '品物がありません'
-      name: '品物名：'
-      reason: '理由：'
     new:
       title: '投稿フォーム'
       name: '品物名'
@@ -46,5 +48,6 @@ ja:
       episode_content: '思い出エピソード'
       reason: '理由'
       tag: 'タグ：'
-      edit: '編集'
-      destroy: '削除'
+    edit:
+      title: "品物詳細(編集)"
+      
