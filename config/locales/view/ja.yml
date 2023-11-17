@@ -40,3 +40,11 @@ ja:
       item_image: '写真'
       tag: 'タグ'
       genre: 'ジャンル'
+    show:
+      title: '品物詳細'
+      name: '品物名：'
+      episode_content: '思い出エピソード'
+      reason: '理由'
+      tag: 'タグ：'
+      edit: '編集'
+      destroy: '削除'
