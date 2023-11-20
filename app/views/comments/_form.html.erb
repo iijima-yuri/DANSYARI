@@ -1,0 +1,9 @@
+<div>
+  <%= form_with model: comment, url: [item, comment], id: "new_comment" do |f| %>
+    <%= f.label :body, Comment.human_attribute_name(:body), class:"text-xl font-bold" %><br>
+    <div class="flex justify-between">
+      <%= f.text_field :body,  class:"form-control h-12 lg:w-9/12 w-9/12 md:w-10/12", placeholder: t('items.show.comment') %>
+      <%= f.submit t('defaults.submission'), class:"bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded font-bold text-xl cursor-pointer px-5 py-2 lg:ml-2 ml-4" %>
+    </div>
+  <% end %>
+</div>
