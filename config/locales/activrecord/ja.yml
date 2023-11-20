@@ -23,4 +23,5 @@ ja:
         name: '品物名'
         episode_content: '思い出エピソード'
         reason_content: '理由'
-        reason_status:
+      comment:
+        body: 'コメント投稿'

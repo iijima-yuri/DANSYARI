@@ -1,0 +1,8 @@
+<li><%= simple_format(comment.body) %></li>
+<li class="mb-5">by：<%= comment.user.name %></li>
+<% if current_user.own?(@item) %>
+    <div class="flex justify-end space-x-5">
+      <%= link_to t('defaults.edit'), "#", class: "px-5 py-2 text-xl font-bold text-white transition-all duration-300 bg-yellow-500 rounded cursor-pointer hover:bg-yellow-600"%>
+      <%= link_to t('defaults.destroy'), "#", class:"px-5 py-2 text-xl font-bold text-white transition-all duration-300 bg-red-500 rounded cursor-pointer hover:bg-red-600" %>
+    </div>
+  <% end %>

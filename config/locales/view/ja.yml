@@ -48,6 +48,7 @@ ja:
       episode_content: '思い出エピソード'
       reason: '理由'
       tag: 'タグ：'
+      comment: 'コメント'
     edit:
       title: "品物詳細(編集)"
       
