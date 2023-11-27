@@ -1,6 +1,12 @@
-<div>
+<div class="my-5">
   <ul>
-    <li class="text-xl font-bold"><%= t('items.show.comment') %></li>
-    <%= render comments %>
+    <% if @comments.present? %>
+      <li class="text-xl font-bold"><%= t('items.show.comment') %></li>
+    <% end %>
+    <%= turbo_frame_tag 'comments' do %>
+      <% comments.each do |comment| %>
+        <%= render 'comments/comment', comment: comment %>
+      <% end %>
+    <% end %>
   </ul>
 </div>
