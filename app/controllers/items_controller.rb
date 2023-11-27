@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @comment = Comment.new
+    @comment = Comment.new(commentable: @item)
     @comments = @item.comments.includes(:user).order(created_at: :desc)
   end
 

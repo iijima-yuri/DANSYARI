@@ -5,3 +5,10 @@ Documentation:
 
 Style/NumericLiterals:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude: 
+    - "db/schema.rb"
+
+Metrics:
+  Enabled: false
