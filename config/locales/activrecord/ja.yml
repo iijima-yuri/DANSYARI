@@ -6,13 +6,13 @@ ja:
         stay: '残す'
         worry: '悩んでいる'
       status:
-        draft: '下書き'
         published: '公開する'
         unpublished: '非公開にする'
   activerecord:
     models:
       user: 'ユーザー'
       item: '品物'
+      comment: 'コメント'
     attributes:
       user:
         email: 'メールアドレス'
