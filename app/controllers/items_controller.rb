@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   def create
     @item = current_user.items.new(item_params)
     if @item.save
-      redirect_to items_path, success: t('defaults.message.created', item: Item.model_name.human)
+      redirect_to items_path, info: t('defaults.message.created', item: Item.model_name.human)
     else
       render :new
     end
@@ -28,16 +28,16 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item, success: t('defaults.message.updated', item: Item.model_name.human)
+      redirect_to @item, info: t('defaults.message.updated', item: Item.model_name.human)
     else
-      flash.now[:danger] = t('defaults.message.updated', item: Item.model_name.human)
+      flash.now[:error] = t('defaults.message.updated', item: Item.model_name.human)
       render :edit
     end
   end
 
   def destroy
     @item.destroy!
-    redirect_to items_path, success: t('defaults.message.deleted', item: Item.model_name.human)
+    redirect_to items_path, info: t('defaults.message.deleted', item: Item.model_name.human)
   end
 
   private

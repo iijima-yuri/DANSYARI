@@ -13,6 +13,14 @@ ja:
     reason: '理由：'
     edit: '編集'
     destroy: '削除'
+    message:
+      require_login: 'ログインしてください'
+      created: '%{item}を作成しました'
+      not_created: '%{item}を作成できませんでした'
+      updated: '%{item}を更新しました'
+      deleted: '%{item}を削除しました'
+      delete_confirm: '削除しますか？'
+      not_authorized: '権限がありません'
   users:
     new:
       title: 'アカウント登録'
@@ -51,4 +59,5 @@ ja:
       comment: 'コメント'
     edit:
       title: "品物詳細(編集)"
-      
+  comments:
+    delete_confirm: "削除しますか？"
