@@ -10,3 +10,19 @@
   content: "";
   @apply block w-full h-0.5 mb-1 pb-1 bg-black rounded;
 }
+
+.flash-message {
+  @apply border rounded;
+}
+
+.error {
+  @apply bg-red-100 border-red-400 text-red-700 px-4 py-3;
+}
+
+.warn {
+  @apply bg-yellow-100 border-yellow-500 text-yellow-700 p-4;
+}
+
+.info {
+  @apply bg-blue-100 border-blue-500 text-blue-700 px-4 py-3;
+}
