@@ -1,5 +1,4 @@
-
-<%# <%= turbo_stream.prepend "flash_messages", partial: "shared/flash_messages" %>
+<%= turbo_stream.prepend "flash_messages", partial: "shared/flash_messages" %>
 
 <%= turbo_stream.replace "#{dom_id(Comment.new)}_form" do %>
   <%= render "form", commentable: @commentable, comment: Comment.new %>
