@@ -16,5 +16,14 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :items do
     resources :comments, only: %i[create destroy]
+    get 'trashed', on: :collection, to: 'items#trashed_items'
+    get 'stay', on: :collection, to: 'items#stay_items'
+    get 'worry', on: :collection, to: 'items#worry_items'
+    get 'all', on: :collection, to: 'items#all_items'
+  end
+
+  namespace :mypage do
+    resource :profile, only: %i[show edit update]
+    resources :profile_shows, only: %i[show]
   end
 end
