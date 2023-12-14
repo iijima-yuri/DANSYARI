@@ -18,6 +18,7 @@ ja:
       created: '%{item}を作成しました'
       not_created: '%{item}を作成できませんでした'
       updated: '%{item}を更新しました'
+      not_updated: '%{item}を更新できませんでした'
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
@@ -59,5 +60,29 @@ ja:
       comment: 'コメント'
     edit:
       title: "品物詳細(編集)"
+    trashed_items:
+      title: '捨てた品物'
+    stay_items:
+      title: '残した品物'
+    worry_items:
+      title: '悩み中の品物'
+    all_items:
+      title: '思い出の品物一覧'
   comments:
     delete_confirm: "削除しますか？"
+  mypage:
+    profiles:
+      show:
+        title: 'マイページ'
+        new: '品物投稿フォーム'
+        good: 'いいね一覧'
+        chat_room: 'チャットルーム'
+        items_list: '思い出の品物一覧'
+        follow: 'フォロー：'
+        follower: 'フォロワー：'
+        edit_account: 'アカウント変更'
+        trash_items: '捨てた品物'
+        stay_items: '残した品物'
+        worry_items: '悩み中の品物'
+      edit:
+        title: 'アカウント変更'
