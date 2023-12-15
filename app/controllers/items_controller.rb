@@ -40,6 +40,22 @@ class ItemsController < ApplicationController
     redirect_to items_path, info: t('defaults.message.deleted', item: Item.model_name.human)
   end
 
+  def trashed_items
+    @trashed_items = current_user.items.where(reason_status: 'trash')
+  end
+
+  def stay_items
+    @stay_items = current_user.items.where(reason_status: 'stay')
+  end
+
+  def worry_items
+    @worry_items = current_user.items.where(reason_status: 'worry')
+  end
+
+  def all_items
+    @all_items = current_user.items
+  end
+
   private
 
   def set_item
