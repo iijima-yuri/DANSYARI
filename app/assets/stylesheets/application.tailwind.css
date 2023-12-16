@@ -11,6 +11,16 @@
   @apply block w-full h-0.5 mb-1 pb-1 bg-black rounded;
 }
 
+.third-title {
+  @apply md:text-2xl text-xl font-bold py-2 my-3;
+}
+
+.third-title::after {
+  content: "";
+  @apply block w-full h-0.5 mb-1 pb-1 bg-black rounded;
+}
+
+
 .flash-message {
   @apply border rounded;
 }
