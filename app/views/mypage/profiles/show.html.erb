@@ -14,14 +14,16 @@
         </ul>
       </div>
 
-      <div class="px-10 pb-3 mt-10 mb-8 text-xl font-bold md:w-2/3">
-        <div class="flex items-center space-x-12">
-          <% if @user && @user.icon? %>
-            <%= image_tag @user.icon.url, size:'200x200', class:"rounded-full" %>
-          <% else %>
-            <%= image_tag 'NO_PHOTO.png', size:'200x200', class: "rounded-full" %>
-          <% end %>
+      <div class="px-10 pb-3 mt-10 text-xl font-bold md:mb-8 md:w-2/3">
+        <div class="items-center text-center md:space-x-12 md:flex">
           <div>
+            <% if @user && @user.icon? %>
+              <%= image_tag @user.icon.url, size:'200x200', class:"rounded-full mx-auto" %>
+            <% else %>
+              <%= image_tag 'NO_PHOTO.png', size:'200x200', class: "rounded-full mx-auto" %>
+            <% end %>
+          </div>
+          <div >
             <p class="mb-3 text-3xl"><%= current_user.name %></p>
             <p class="mb-1 text-xl"><%= t('mypage.profiles.show.follow') %></p><%# <%= @follow.count %>
             <p class="text-xl"><%= t('mypage.profiles.show.follower')%></p><%# <%= @follower.count %>
@@ -30,19 +32,19 @@
         <div class="flex justify-between mt-20 mb-20">
           <div>
             <%= link_to trashed_items_path do %>
-              <p class="mb-2 text-2xl"><%= t('mypage.profiles.show.trash_items') %></p>
+              <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.trash_items') %></p>
               <p class="text-3xl text-center underline"><%= current_user.items.where(reason_status: 'trash').count %>件</p>
             <% end %>
           </div>
           <div>
             <%= link_to stay_items_path do %>
-              <p class="mb-2 text-2xl"><%= t('mypage.profiles.show.stay_items') %></p>
+              <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.stay_items') %></p>
               <p class="text-3xl text-center underline"><%= current_user.items.where(reason_status: 'stay').count %>件</p>
             <% end %>
           </div>
           <div>
             <%= link_to worry_items_path do %>
-              <p class="mb-2 text-2xl"><%= t('mypage.profiles.show.worry_items') %></p>
+              <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.worry_items') %></p>
               <p class="text-3xl text-center underline"><%= current_user.items.where(reason_status: 'worry').count %>件</p>
             <% end %>
           </div>
