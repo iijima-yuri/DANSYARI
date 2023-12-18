@@ -4,7 +4,7 @@
       <%= link_to image_tag("logo-header.png", size: '75x75'), root_path, class:"inline" %>
       <div>
         <%= link_to t('defaults.notice'), "#", class:"hover:text-lime-800 transition-all duration-300 mr-5 fa-solid fa-bell" %>
-        <%= link_to t('defaults.my_page'), "#", class:"hover:text-lime-800 transition-all duration-300 mr-5 fa-solid fa-user" %>
+        <%= link_to t('defaults.my_page'), mypage_profile_path, class:"hover:text-lime-800 transition-all duration-300 mr-5 fa-solid fa-user" %>
         <%= link_to t('defaults.logout'), logout_path, data: { turbo_method: :delete }, class: "hover:text-lime-800 transition-all duration-300 fa-solid fa-right-from-bracket" %>
       </div>
     </div>

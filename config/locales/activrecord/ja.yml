@@ -19,6 +19,8 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         name: 'アカウント名'
+        profile: 'マイページ'
+        icon: 'アイコン'
       item:
         name: '品物名'
         episode_content: '思い出エピソード'

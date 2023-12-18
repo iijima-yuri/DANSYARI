@@ -1,0 +1,29 @@
+<%= form_with model: @user, url: mypage_profile_path, local: true do |f| %>
+  <div class="mx-2 mt-10 md:flex">
+    <div class="px-10 mt-10 mb-8 md:w-1/3">
+      <div class="pt-3 form-group">
+        <%= image_tag user.icon.url, id: 'preview', size:'250x250',data: { turbo: false }, class:"rounded-full" %>
+        <%= f.hidden_field :icon_cache %>
+        <%= f.file_field :icon, onchange: 'previewImage()', class: "form-control mt-3", accept: 'image/*' %>
+      </div>
+    </div>
+    
+    <div class="px-10 pt-6 pb-10 md:mb-10 md:w-2/3">
+      <div class="mb-10 form-group">
+        <i class="fa-solid fa-user"></i>
+        <%= f.label :name, User.human_attribute_name(:name), class:"font-bold text-xl mb-1" %><br>
+        <%= f.text_area :name, class: "form-control rounded w-full h-11 focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5"  %>
+      </div>
+
+      <div class="form-group">
+        <i class="fa-solid fa-envelope"></i>
+        <%= f.label :email, User.human_attribute_name(:email), class:"font-bold text-xl mb-1" %><br>
+        <%= f.text_area :email, class: "form-control rounded w-full h-11 focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5"  %>
+      </div>
+      
+      <div class="mt-20 text-center md:text-end">
+        <%= f.submit t('defaults.edit'), class:"bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded py-3 px-12 font-bold text-xl cursor-pointer mb-5" %>
+      </div>
+    </div>
+  </div>
+<% end %>

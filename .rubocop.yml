@@ -12,3 +12,10 @@ Metrics/BlockLength:
 
 Metrics:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+  Style/ClassAndModuleChildren:
+  Exclude:
+    - 'config/application.rb'

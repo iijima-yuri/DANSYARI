@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  mount_uploader :icon, IconUploader
+
   has_many :items, dependent: :destroy
   has_many :comments, dependent: :destroy
 

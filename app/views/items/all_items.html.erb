@@ -1,0 +1,15 @@
+<div class="bg-[#f5eace]">
+<%= render 'shared/header' %>
+  <div>
+    <div class="container mx-auto">
+      <h1 class="secondary-title"><%= t('.title') %></h1>
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto place-content-center place-items-center">
+        <% if @all_items.present? %>
+          <%= render @all_items %>
+        <% else %>
+          <p><%= t('.no_result') %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
