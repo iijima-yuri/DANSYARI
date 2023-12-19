@@ -1,0 +1,23 @@
+<div class="mb-5">
+  <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
+    <%= link_to item_path(item) do %>
+      <li class="pb-1 text-xl font-bold"><%= t('defaults.name') %><%= item.name %></li>
+    <% end %>
+    <% if current_user.own?(item) %>
+      <%= link_to mypage_profile_path do %>
+        <p class="mb-2 text-xl font-bold">by：<%= item.user.name %></p>
+      <% end %>
+    <% else %>
+      <%= link_to mypage_profile_show_path(item.user) do %>
+        <p class="mb-2 text-xl font-bold">by：<%= item.user.name %></p>
+      <% end %>
+    <% end %>
+    <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
+        <p class="text-lg"><%= item.reason_content %></p>
+    </li>
+    <%# <li><p class="text-xl font-bold"><%= item.tag %><%= t('defaults.tag') %></p>
+    </li>
+    <%# <li><p class="text-xl font-bold"><%= item.genres %><%= t('defaults.genres') %></p>
+    </li>
+  </ul>
+</div>
