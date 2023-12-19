@@ -19,6 +19,19 @@
         <%= image_tag @item.item_image.url, size:'400x400', class:"mt-4" %>
       </div>
       <div class="px-10 pb-5 md:w-1/2">
+        <div>
+          <% if @item.favorited?(current_user) %>
+            <%= link_to item_favorites_path(@item.id), data: { turbo_method: :delete }, class: 'flex items-baseline justify-end' do %>
+              <p class="text-rose-600">いいね！</p>
+              <i class="fa-solid fa-thumbs-up fa-lg" style="color: #d90d0d;"></i>
+            <% end %>
+          <% else %>
+            <%= link_to item_favorites_path(@item.id), data: { turbo_method: :post }, class: 'flex items-baseline justify-end' do %>
+              <p>いいね！</p>
+              <i class="fa-solid fa-thumbs-up fa-lg"></i>
+            <% end %>
+          <% end %>
+        </div>
         <div class="mb-5">
           <p class="text-xl font-bold"><%= t('items.show.episode_content') %></p>
           <%= @item.episode_content %>

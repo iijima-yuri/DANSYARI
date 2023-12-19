@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_052309) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_18_025053) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,9 +22,18 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_052309) do
     t.datetime "updated_at", null: false
     t.string "commentable_type", default: " ", null: false
     t.bigint "commentable_id", default: 0, null: false
-    t.index %w[commentable_type commentable_id], name: "index_comments_on_commentable"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
     t.index ["item_id"], name: "index_comments_on_item_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -54,5 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_052309) do
 
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "items"
+  add_foreign_key "favorites", "users"
   add_foreign_key "items", "users"
 end

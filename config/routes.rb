@@ -13,9 +13,15 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create] do
+    member do
+      get 'favorites'
+    end
+  end
+
   resources :items do
     resources :comments, only: %i[create destroy]
+    resource :favorites, only: %i[create destroy]
     get 'trashed', on: :collection, to: 'items#trashed_items'
     get 'stay', on: :collection, to: 'items#stay_items'
     get 'worry', on: :collection, to: 'items#worry_items'

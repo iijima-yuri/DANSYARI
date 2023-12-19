@@ -8,7 +8,7 @@
         <ul>
           <li class="mb-3"><%= link_to t('mypage.profiles.show.items_list'), all_items_path %></li>
           <li class="mb-3"><%= link_to t('mypage.profiles.show.new'), new_item_path %></li>
-          <li class="mb-3"><%= link_to t('mypage.profiles.show.good'), "#" %></li>
+          <li class="mb-3"><%= link_to t('mypage.profiles.show.good'), favorites_user_path(current_user) %></li>
           <li class="mb-3"><%= link_to t('mypage.profiles.show.chat_room'), "#" %></li>
           <li class="mb-3"><%= link_to t('mypage.profiles.show.edit_account'), edit_mypage_profile_path %></li>
         </ul>
