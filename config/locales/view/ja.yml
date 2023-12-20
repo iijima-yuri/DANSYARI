@@ -13,6 +13,9 @@ ja:
     reason: '理由：'
     tag: 'タグ：'
     genres: 'ジャンル：'
+    user_name: 'ユーザー名：'
+    follow: 'フォローする'
+    unfollow: 'フォローを外す' 
     edit: '編集'
     destroy: '削除'
     message:
@@ -82,7 +85,7 @@ ja:
         good: 'いいね一覧'
         chat_room: 'チャットルーム'
         items_list: '思い出の品物一覧'
-        follow: 'フォロー：'
+        follow: 'フォロー中：'
         follower: 'フォロワー：'
         edit_account: 'アカウント変更'
         trash_items: '捨てた品物'
@@ -90,3 +93,10 @@ ja:
         worry_items: '悩み中の品物'
       edit:
         title: 'アカウント変更'
+  relationships:
+    followings:
+      title: 'フォロー中一覧'
+      no_result: 'ユーザーがいません'
+    followers:
+      title: 'フォロワー一覧'
+      no_result: 'ユーザーがいません'
