@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create] do
     member do
       get 'favorites'
+      get 'follows', to: 'relationships#followings'
+      get 'followers', to: 'relationships#followers'
     end
+    resource :relationships, only: %i[create destroy]
   end
 
   resources :items do
