@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_18_025053) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_19_034432) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_18_025053) do
     t.datetime "updated_at", null: false
     t.string "commentable_type", default: " ", null: false
     t.bigint "commentable_id", default: 0, null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
+    t.index %w[commentable_type commentable_id], name: "index_comments_on_commentable"
     t.index ["item_id"], name: "index_comments_on_item_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -47,6 +47,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_18_025053) do
     t.integer "reason_status", default: 0, null: false, comment: "理由のステータス"
     t.integer "status", default: 0, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

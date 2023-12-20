@@ -1,0 +1,9 @@
+<div class="mb-5">
+  <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
+    <li class="pb-1 text-xl font-bold">
+      <%= link_to (current_user == user ? mypage_profile_path(current_user) : mypage_profile_show_path(user)) do %>
+        <%= t('defaults.user_name') %><%= user.name %>
+      <% end %>
+    </li>
+  </ul>
+</div>
