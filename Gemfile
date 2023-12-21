@@ -90,3 +90,5 @@ gem 'carrierwave', '~> 3.0'
 gem 'enum_help'
 
 gem 'pry-byebug'
+
+gem 'kaminari'
