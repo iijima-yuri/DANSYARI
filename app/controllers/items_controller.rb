@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[edit update destroy]
 
   def index
-    @items = Item.published.includes(:user).order(created_at: :desc)
+    @items = Item.published.includes(:user).order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def new
