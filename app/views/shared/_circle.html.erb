@@ -1,0 +1,12 @@
+<% if unchecked_notifications.any? %>
+  <%= link_to notifications_path, class: "hover:text-lime-800 transition-all duration-300 mr-5 font-bold" do %>
+    <i class="absolute text-[9px] text-red-600 fa-solid fa-circle"></i>
+    <i class="fa-solid fa-bell"></i>
+    <%= t('defaults.notification') %>
+  <% end %>
+  <% else %>
+    <%= link_to notifications_path, class:"hover:text-lime-800 transition-all duration-300 mr-5 font-bold" do %>
+      <i class="fa-solid fa-bell"></i>
+      <%= t('defaults.notification') %>
+    <% end %>
+<% end %>

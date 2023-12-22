@@ -4,8 +4,6 @@
       <%= link_to image_tag("logo-header.png", size: '75x75'), root_path, class:"inline" %>
       
       <div>
-        <%= render 'shared/circle' %>
-  
         <%= link_to mypage_profile_path, class:"hover:text-lime-800 transition-all duration-300 mr-5 font-bold" do %>
           <i class="fa-solid fa-user"></i>
           <%= t('defaults.my_page') %>
@@ -19,3 +17,11 @@
     </div>
   </nav>
 </header>
+
+<% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+<% if notifications.exists? %>
+  <%= render partial: 'notification', collection: @notifications, as: :notification %>
+  <%= paginate notifications %>
+<% else %>
+  <%= t('notification.index.no_result') %>
+<% end %>

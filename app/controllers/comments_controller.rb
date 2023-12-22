@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
     @comment.item_id = @comment.commentable_id
+    @item = @comment.item
+    @item.create_notification_comment(current_user, @comment.id, @item.id)
 
     respond_to do |format|
       if @comment.save
