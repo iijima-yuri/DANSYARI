@@ -35,4 +35,6 @@ Rails.application.routes.draw do
     resource :profile, only: %i[show edit update]
     resources :profile_shows, only: %i[show]
   end
+
+  resources :notifications, only: %i[index]
 end
