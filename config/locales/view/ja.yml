@@ -8,7 +8,7 @@ ja:
     logout: 'ログアウト'
     register: 'アカウント登録'
     my_page: 'マイページ'
-    notice: '通知'
+    notification: '通知'
     contact: 'お問い合わせ'
     privacy_policy: 'プライバシーポリシー'
     terms_of_service: '利用規約'
@@ -39,6 +39,7 @@ ja:
       fail: 'ユーザー登録に失敗しました'
     favorites:
       title: 'いいね一覧'
+      no_result: 'いいねがありません'
   user_sessions:
     new:
       title: 'ログイン'
@@ -104,3 +105,6 @@ ja:
     followers:
       title: 'フォロワー一覧'
       no_result: 'ユーザーがいません'
+  notification:
+    index:
+      no_result: '通知はありません'
