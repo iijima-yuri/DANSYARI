@@ -31,7 +31,7 @@
 * 品物を捨てた理由、品物を残した理由の閲覧
 
 - 登録しているユーザー
-* ログイン(google API)
+* ログイン
 * ログアウト
 * 品物(写真、思い出)投稿
   * 品物の公開・非公開
@@ -46,6 +46,7 @@
 
 
 ### その後の機能
+* ログイン(google API)
 * パスワードリセット(sorceryのモジュールを利用)
 * 管理者画面
   * 全てのユーザーのCRUD
@@ -57,4 +58,4 @@
 
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/6009c3d2fb1a65c1f53fb08127ce2666.png)](https://gyazo.com/6009c3d2fb1a65c1f53fb08127ce2666)
+[![Image from Gyazo](https://i.gyazo.com/db74c1d7c1806fbce675747e73db2ca4.png)](https://gyazo.com/db74c1d7c1806fbce675747e73db2ca4)
