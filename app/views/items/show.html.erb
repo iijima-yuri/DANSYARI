@@ -22,12 +22,12 @@
         <div>
           <% if @item.favorited?(current_user) %>
             <%= link_to item_favorites_path(@item.id), data: { turbo_method: :delete }, class: 'flex items-baseline justify-end' do %>
-              <p class="text-rose-600">いいね！</p>
+              <p class="text-rose-600"><%= t('items.show.good') %></p>
               <i class="fa-solid fa-thumbs-up fa-lg" style="color: #d90d0d;"></i>
             <% end %>
           <% else %>
             <%= link_to item_favorites_path(@item.id), data: { turbo_method: :post }, class: 'flex items-baseline justify-end' do %>
-              <p>いいね！</p>
+              <p><%= t('items.show.good') %></p>
               <i class="fa-solid fa-thumbs-up fa-lg"></i>
             <% end %>
           <% end %>
@@ -39,6 +39,12 @@
         <div class="mb-5">
           <p class="text-xl font-bold"><%= @item.reason_status_i18n %><%= t('items.show.reason') %></p>
           <%= @item.reason_content %>
+        </div>
+        <div class="mb-5">
+          <p class="text-xl font-bold"><%= t('items.show.tag') %></p>
+            <% @item_tags.each do |tag| %>
+              <%= link_to tag.name, item_search_tag_path(item_id: @item.id, tag_id: tag.id) %>
+            <% end %>
         </div>
         <% if current_user.own?(@item) %>
           <div class="flex justify-end space-x-5">

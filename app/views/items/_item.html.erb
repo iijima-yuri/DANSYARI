@@ -12,8 +12,15 @@
         <p class="mb-2 text-xl font-bold">by：<%= item.user.name %></p>
       <% end %>
     <% end %>
-    <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3" %></li>
-    <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
+      <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3" %></li>
+      <li>
+        <span class="mb-2 text-xl font-bold"><%= t('defaults.tag') %></span>
+        <% item.tags.each do |tag| %>
+          <%= link_to tag.name, item_search_tag_path(item_id: item.id, tag_id: tag.id), class: 'font-bold text-xl' %>
+          <%="(#{tag.items.count})" %>
+        <% end %>
+      </li>
+      <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
         <p class="text-lg"><%= item.reason_content %></p>
     </li>
   </ul>
