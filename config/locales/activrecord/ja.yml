@@ -13,6 +13,7 @@ ja:
       user: 'ユーザー'
       item: '品物'
       comment: 'コメント'
+      tag: 'タグ'
     attributes:
       user:
         email: 'メールアドレス'
@@ -27,3 +28,5 @@ ja:
         reason_content: '理由'
       comment:
         body: 'コメント投稿'
+      tag:
+        name: 'タグ'

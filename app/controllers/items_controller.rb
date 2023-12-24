@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.published.includes(:user).order(created_at: :desc).page(params[:page]).per(6)
+    @tag_list = Tag.all
   end
 
   def new
@@ -11,7 +12,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.new(item_params)
+    tag_list = params[:item][:tag_list].split(',')
     if @item.save
+      @item.save_tags(tag_list)
       redirect_to items_path, info: t('defaults.message.created', item: Item.model_name.human)
     else
       render :new
@@ -22,13 +25,19 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @comment = Comment.new(commentable: @item)
     @comments = @item.comments.includes(:user).order(created_at: :desc)
+    @tag_list = @item.tags.pluck(:name).join(',')
+    @item_tags = @item.tags
   end
 
-  def edit; end
+  def edit
+    @tag_list = @item.tags.pluck(:name).join(',')
+  end
 
   def update
+    tag_list = params[:item][:tag_list].split(',')
     if @item.update(item_params)
-      redirect_to @item, info: t('defaults.message.updated', item: Item.model_name.human)
+      @item.save_tags(tag_list)
+      redirect_to items_path, info: t('defaults.message.updated', item: Item.model_name.human)
     else
       flash.now[:error] = t('defaults.message.updated', item: Item.model_name.human)
       render :edit
@@ -54,6 +63,12 @@ class ItemsController < ApplicationController
 
   def all_items
     @all_items = current_user.items
+  end
+
+  def search_tag
+    @tag_list = Tag.all
+    @tag = Tag.find(params[:tag_id])
+    @items = @tag.items
   end
 
   private

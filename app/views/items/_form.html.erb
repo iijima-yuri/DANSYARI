@@ -31,6 +31,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :tag_list, Tag.human_attribute_name(:name) %><br>
+        <%= f.text_field :tag_list, value: @tag_list, class: "form-control w-full", placeholder: ',で区切ると複数のタグが登録できます' %>
+      </div>
+
+      <div class="form-group">
         <%= f.radio_button :status, :published %>
         <%= f.label :status, t('enums.item.status.published') %>
         <%= f.radio_button :status, :unpublished %>

@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     get 'stay', on: :collection, to: 'items#stay_items'
     get 'worry', on: :collection, to: 'items#worry_items'
     get 'all', on: :collection, to: 'items#all_items'
+
+    get 'search_tag', to: 'items#search_tag'
   end
 
   namespace :mypage do
