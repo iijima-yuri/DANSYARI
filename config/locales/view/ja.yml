@@ -68,8 +68,9 @@ ja:
       name: '品物名：'
       episode_content: '思い出エピソード'
       reason: '理由'
-      tag: 'タグ：'
+      tag: 'タグ'
       comment: 'コメント'
+      good: 'いいね！'
     edit:
       title: "品物詳細(編集)"
     trashed_items:
@@ -80,6 +81,9 @@ ja:
       title: '悩み中の品物'
     all_items:
       title: '思い出の品物一覧'
+    search_tag:
+      title: '検索結果（タグ）'
+      no_result: 'タグはありません'
   comments:
     delete_confirm: "削除しますか？"
   mypage:
