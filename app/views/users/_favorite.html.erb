@@ -15,8 +15,12 @@
     <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
         <p class="text-lg"><%= item.reason_content %></p>
     </li>
-    <%# <li><p class="text-xl font-bold"><%= item.tag %><%= t('defaults.tag') %></p>
-    </li>
+    
+      <li class="pb-1 text-xl font-bold">
+        <%= t('defaults.tag') %>
+        <%= link_to item.tags.name, item_search_tag_path(item_id: item.id, tag_id: tag.id) %>
+      </li>
+    
     <%# <li><p class="text-xl font-bold"><%= item.genres %><%= t('defaults.genres') %></p>
     </li>
   </ul>
