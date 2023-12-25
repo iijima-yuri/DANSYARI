@@ -31,6 +31,7 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
+      
   users:
     new:
       title: 'アカウント登録'

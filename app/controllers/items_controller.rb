@@ -39,8 +39,8 @@ class ItemsController < ApplicationController
       @item.save_tags(tag_list)
       redirect_to items_path, info: t('defaults.message.updated', item: Item.model_name.human)
     else
-      flash.now[:error] = t('defaults.message.updated', item: Item.model_name.human)
-      render :edit
+      flash.now[:error] = t('defaults.message.not_updated', item: Item.model_name.human)
+      render :edit, status: :unprocessable_entity
     end
   end
 

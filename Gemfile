@@ -92,3 +92,5 @@ gem 'enum_help'
 gem 'pry-byebug'
 
 gem 'kaminari'
+
+gem 'mini_magick'
