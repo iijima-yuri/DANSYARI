@@ -12,7 +12,7 @@ class Mypage::ProfilesController < Mypage::BaseController
       redirect_to mypage_profile_path, info: t('defaults.message.updated', item: User.model_name.human)
     else
       flash.now[:error] = t('defaults.message.not_updated', item: User.model_name.human)
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
