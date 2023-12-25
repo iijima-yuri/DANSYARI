@@ -371,6 +371,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kaminari
+  mini_magick
   pg (~> 1.1)
   pry-byebug
   puma (>= 5.0)
