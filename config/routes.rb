@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  resources :users, only: %i[new create] do
+  resources :users, only: %i[new create show index] do
     member do
       get 'favorites'
       get 'follows', to: 'relationships#followings'
@@ -39,4 +40,6 @@ Rails.application.routes.draw do
   end
 
   resources :notifications, only: %i[index]
+
+  resources :chat_rooms, only: %i[index show create destroy]
 end
