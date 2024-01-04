@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @followeds = current_user.followers
     @users = User.all
   end
 
