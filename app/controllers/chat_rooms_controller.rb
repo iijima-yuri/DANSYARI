@@ -3,12 +3,12 @@ class ChatRoomsController < ApplicationController
 
   def index
     @user = current_user
-    @currentEntries = current_user.entries
-    myChatRoomIds = []
-    @currentEntries.each do |entry|
-      myChatRoomIds << entry.chat_room.id
+    @current_entries = current_user.entries
+    my_chat_room_ids = []
+    @current_entries.each do |entry|
+      my_chat_room_ids << entry.chat_room.id
     end
-    @anotherEntries = Entry.where(chat_room_id: myChatRoomIds).where.not(user_id: @user.id).order(created_at: :desc)
+    @another_entries = Entry.where(chat_room_id: my_chat_room_ids).where.not(user_id: @user.id).order(created_at: :desc)
   end
 
   def show

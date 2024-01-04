@@ -8,6 +8,6 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_message(message)
-    ApplicationController.render(partial: 'chat_rooms/message', locals: { message: message })
+    ApplicationController.render(partial: 'chat_rooms/message', locals: { message: })
   end
 end
