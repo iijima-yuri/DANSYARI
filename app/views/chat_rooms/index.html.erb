@@ -1,0 +1,32 @@
+<div class="bg-[#f5eace]">
+<%= render 'shared/header' %>
+  <div>
+    <div class="container mx-auto">
+      <h1 class="secondary-title"><%= t('.title') %></h1>
+
+      <% @another_entries.each do |e| %>
+        <table class="border-separate border-spacing-5">
+          <tr class="font-bold">
+            <td>
+              <%= link_to chat_room_path(e.chat_room.id) do %>
+                <%= e.user.name %>
+              <% end %>
+            </td>
+            <td>
+              <% dm = Message.find_by(id: e.chat_room.message_ids.last) %>
+              <%= truncate(dm.message, length: 10) if dm.present? %>
+            </td>
+            <td>
+              <h6><%= e.updated_at.strftime("%Y/%m/%d %H:%M") %></h6>
+            </td>
+            <td>
+              <%= link_to chat_room_path(e.chat_room.id), data: { turbo_method: :delete } do %>
+                <i class="fas fa-trash black"></i>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

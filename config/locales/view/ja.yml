@@ -41,6 +41,12 @@ ja:
     favorites:
       title: 'いいね一覧'
       no_result: 'いいねがありません'
+    index:
+      title: 'チャットできるユーザ一覧（フォローしているユーザー）'
+    show:
+      title: 'ユーザー'
+      chat_continue: 'チャットを続ける'
+      chat_start: 'チャットを始める'
   user_sessions:
     new:
       title: 'ログイン'
@@ -113,3 +119,8 @@ ja:
   notification:
     index:
       no_result: '通知はありません'
+  chat_rooms:
+    index:
+      title: 'メッセージ一覧'
+    show:
+      title: 'チャットルーム'

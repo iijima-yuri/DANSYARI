@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_22_185037) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_26_023648) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body", null: false
@@ -25,6 +31,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_22_185037) do
     t.index %w[commentable_type commentable_id], name: "index_comments_on_commentable"
     t.index ["item_id"], name: "index_comments_on_item_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chat_room_id", null: false
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_entries_on_chat_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -59,6 +75,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_22_185037) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chat_room_id", null: false
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
@@ -85,6 +111,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_22_185037) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,9 +128,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_22_185037) do
 
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "entries", "chat_rooms"
+  add_foreign_key "entries", "users"
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "users"
   add_foreign_key "item_tags", "items"
   add_foreign_key "item_tags", "tags"
   add_foreign_key "items", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
 end

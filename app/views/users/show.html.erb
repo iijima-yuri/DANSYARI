@@ -1,0 +1,25 @@
+<div class="bg-[#f5eace]">
+<%= render 'shared/header' %>
+  <div>
+    <div class="container mx-auto">
+      <h1 class="secondary-title"><%= t('.title') %></h1>
+      <ul>
+      <li  class="mb-10 text-xl font-bold"><%= @user.name %></li>
+        <% if logged_in? %>
+          <% unless @user.id == current_user.id %>
+            <% if @is_chat_room == true %>
+              <li class="pb-10"><%= link_to t('users.show.chat_continue'), chat_rooms_path(@chat_room_id), local: false, class: 'bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded py-3 px-12 font-bold text-xl cursor-pointer' %></li>
+            <% else %>
+              <%= form_for @chat_room, url: chat_rooms_path do |f| %>
+                <%= fields_for @entry do |e| %>
+                  <li><%= e.hidden_field :user_id, value: @user.id %></li>
+                <% end %>
+              <%= f.submit t('users.show.chat_start'), class: 'bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded py-3 px-12 font-bold text-xl cursor-pointer mb-10' %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

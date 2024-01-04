@@ -1,0 +1,25 @@
+<div class="bg-[#f5eace]">
+<%= render 'shared/header' %>
+  <div>
+    <div class="container mx-auto">
+      <h1 class="secondary-title"><%= t('.title') %></h1>
+
+      <div class="mb-5 text-xl font-bold">
+        <h2>参加者</h2>
+        <% @entries.each do |e| %>
+          <%= link_to e.user.name, user_path(e.user_id) %>
+        <% end %>
+      </div>
+
+      <div id= 'messages'>
+        <div id="chats" data-id ="<%= @chat_room.id %>">
+          <%= render partial: 'chat_rooms/message',collection: @messages, as: :message %>
+        </div>
+      </div>
+      <form>
+        <label class="font-bold">Say something:</label><br>
+        <input type = "text" class="mb-10" id = "talk-form" data-behavior = "chat_room_speaker" data-user = "<%= current_user.id %>" data-room = "<%= @chat_room.id %>">
+      </form>
+    </div>
+  </div>
+</div>
