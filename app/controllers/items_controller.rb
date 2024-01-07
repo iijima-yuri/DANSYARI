@@ -2,12 +2,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[edit update destroy]
 
   def index
-    @items = Item.published.includes(:user).order(created_at: :desc).page(params[:page]).per(6)
+    @items = Item.published.includes(:user, :genre).order(created_at: :desc).page(params[:page]).per(6)
     @tag_list = Tag.all
   end
 
   def new
     @item = Item.new
+    @genres = Genre.all
   end
 
   def create
@@ -27,10 +28,12 @@ class ItemsController < ApplicationController
     @comments = @item.comments.includes(:user).order(created_at: :desc)
     @tag_list = @item.tags.pluck(:name).join(',')
     @item_tags = @item.tags
+    @genre = @item.genre
   end
 
   def edit
     @tag_list = @item.tags.pluck(:name).join(',')
+    @genres = Genre.all
   end
 
   def update
@@ -71,6 +74,12 @@ class ItemsController < ApplicationController
     @items = @tag.items
   end
 
+  def search_genre
+    @genre_list = Genre.all
+    @genre = Genre.find(params[:genre_id])
+    @items = @genre.items
+  end
+
   private
 
   def set_item
@@ -78,6 +87,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :episode_content, :reason_content, :item_image, :item_image_cache, :reason_status, :status)
+    params.require(:item).permit(:name, :episode_content, :reason_content, :item_image, :item_image_cache, :reason_status, :status, :genre_id)
   end
 end
