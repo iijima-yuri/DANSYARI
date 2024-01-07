@@ -1,6 +1,20 @@
 <%= content_for(:title, t('.title')) %>
 <div class="bg-[#f5eace]">
-  <%= render 'shared/header' %>
+  <header class="bg-white">
+    <nav class="container">
+      <div class="flex items-center justify-between px-4 md:text-end">
+        <%= link_to image_tag("logo-header.png", size: '75x75'), root_path, class:"inline" %>
+        <div>
+          <%= render 'shared/circle' %>
+          <%= link_to logout_path, data: { turbo_method: :delete }, class: "hover:text-lime-800 transition-all duration-300 font-bold sm:text-base text-sm" do %>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <%= t('defaults.logout') %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
   <div class="container mx-auto">
     <h1 class="secondary-title"><%= t('.title') %></h1>
     <div class="mx-2 md:flex">

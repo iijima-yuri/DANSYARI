@@ -1,0 +1,8 @@
+<h2>ジャンルの追加</h2>
+  <%= form_with model: @genre, data:{ turbo: false } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.submit "登録する" %>
+    
+  <% end %>

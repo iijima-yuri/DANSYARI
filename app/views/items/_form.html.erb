@@ -3,7 +3,7 @@
     <div class="px-10 mb-8 md:w-1/2">
       <div class="form-group">
         <%= f.label :name, Item.human_attribute_name(:name) %>
-        <%= f.text_field :name, class: "form-control w-3/5" %>
+        <%= f.text_field :name, class: "form-control w-3/5", id: "item_name" %>
       </div>
       <div class="pt-3 form-group">
         <%= image_tag item.item_image.url, id: 'preview', size:'400x400',data: { turbo: false } %>
@@ -15,12 +15,12 @@
     <div class="px-10 pb-5 md:w-1/2">
       <div class="form-group">
         <%= f.label :episode_content, Item.human_attribute_name(:episode_content) %><br>
-        <%= f.text_area :episode_content, class:"form-control h-24 w-full" %>
+        <%= f.text_area :episode_content, class:"form-control h-24 w-full", id:"item_episode_content" %>
       </div>
       
       <div class="form-group">
-        <%= f.radio_button :reason_status, :trash %>
-        <%= f.label :reason_status, t('enums.item.reason_status.trash') %>
+        <%= f.radio_button :reason_status, :trash, id: "item_reason_status" %>
+        <%= f.label :reason_status, t('enums.item.reason_status.trash'), id: "item_reason_status" %>
         <%= f.radio_button :reason_status, :stay %>
         <%= f.label :reason_status, t('enums.item.reason_status.stay') %>
         <%= f.radio_button :reason_status, :worry %>
@@ -36,8 +36,13 @@
       </div>
 
       <div class="form-group">
-        <%= f.radio_button :status, :published %>
-        <%= f.label :status, t('enums.item.status.published') %>
+        <%= f.label :genre, Genre.human_attribute_name(:name) %><br>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.radio_button :status, :published, id: "item_status" %>
+        <%= f.label :status, t('enums.item.status.published'), id: "item_status" %>
         <%= f.radio_button :status, :unpublished %>
         <%= f.label :status, t('enums.item.status.unpublished') %>
       </div>

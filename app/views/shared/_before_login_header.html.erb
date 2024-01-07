@@ -1,8 +1,15 @@
 <header>
   <nav class="container p-4 mx-auto text-end">
     <div class="block space-x-12 md:text-end">
-      <%= link_to t('defaults.register'), new_user_path, class:"hover:text-lime-800 transition-all duration-300" %>
-      <%= link_to t('defaults.login'), login_path, class:"hover:text-lime-800 transition-all duration-300 fa-solid fa-right-to-bracket" %>
+      <%= link_to new_user_path, class:"hover:text-lime-800 transition-all duration-300 font-bold" do %>
+        <i class="fa-solid fa-user"></i>
+        <%= t('defaults.register')%>
+      <% end %>
+      
+      <%= link_to login_path, class:"hover:text-lime-800 transition-all duration-300 font-bold" do %>
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <%= t('defaults.login') %>
+      <% end %>
     </div>
   </nav>
 </header>

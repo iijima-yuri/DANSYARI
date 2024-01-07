@@ -16,12 +16,20 @@
         <p class="text-lg"><%= item.reason_content %></p>
     </li>
     
-      <li class="pb-1 text-xl font-bold">
-        <%= t('defaults.tag') %>
-        <%= link_to item.tags.name, item_search_tag_path(item_id: item.id, tag_id: tag.id) %>
+      <li>
+        <span class="mb-2 text-xl font-bold"><%= t('defaults.tag') %></span>
+        <% item.tags.each do |tag| %>
+          <%= link_to tag.name, item_search_tag_path(item_id: item.id, tag_id: tag.id), class: 'font-bold text-xl' %>
+          <%="(#{tag.items.count})" %>
+        <% end %>
       </li>
     
-    <%# <li><p class="text-xl font-bold"><%= item.genres %><%= t('defaults.genres') %></p>
+      <li class="pb-1 text-xl font-bold">
+        <%= t('defaults.genres') %>
+        <%= link_to item.genre.name, item_search_genre_path(item_id: item.id, genre_id: item.genre.id) %>
+      </li>
+    
+    
     </li>
   </ul>
 </div>

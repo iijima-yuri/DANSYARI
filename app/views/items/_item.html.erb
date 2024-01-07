@@ -20,6 +20,9 @@
           <%="(#{tag.items.count})" %>
         <% end %>
       </li>
+      <%= link_to item_search_genre_path(item_id: item.id, genre_id: item.genre.id) do %>
+        <li class="pb-1 text-xl font-bold"><%= t('defaults.genres') %><%= item.genre.name %></li>
+      <% end %>
       <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
         <p class="text-lg"><%= item.reason_content %></p>
     </li>
