@@ -6,12 +6,12 @@
       <div>
         <%= render 'shared/circle' %>
   
-        <%= link_to mypage_profile_path, class:"hover:text-lime-800 transition-all duration-300 mr-5 font-bold" do %>
+        <%= link_to mypage_profile_path, class:"hover:text-lime-800 transition-all duration-300 mr-5 font-bold sm:text-base text-sm" do %>
           <i class="fa-solid fa-user"></i>
           <%= t('defaults.my_page') %>
         <% end %>
       
-        <%= link_to logout_path, data: { turbo_method: :delete }, class: "hover:text-lime-800 transition-all duration-300 font-bold" do %>
+        <%= link_to logout_path, data: { turbo_method: :delete }, class: "hover:text-lime-800 transition-all duration-300 font-bold sm:text-base text-sm" do %>
           <i class="fa-solid fa-right-from-bracket"></i>
           <%= t('defaults.logout') %>
         <% end %>

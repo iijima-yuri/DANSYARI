@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   mount_uploader :item_image, ItemImageUploader
   belongs_to :user
+  belongs_to :genre
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :favorites, dependent: :destroy
 

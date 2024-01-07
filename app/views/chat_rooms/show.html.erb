@@ -1,3 +1,7 @@
+<%= turbo_frame_tag 'action_cable' do %>
+  <%= javascript_include_tag 'channels/action_cable' %>
+<% end %>
+
 <div class="bg-[#f5eace]">
 <%= render 'shared/header' %>
   <div>
@@ -10,7 +14,7 @@
           <%= link_to e.user.name, user_path(e.user_id) %>
         <% end %>
       </div>
-
+      
       <div id= 'messages'>
         <div id="chats" data-id ="<%= @chat_room.id %>">
           <%= render partial: 'chat_rooms/message',collection: @messages, as: :message %>

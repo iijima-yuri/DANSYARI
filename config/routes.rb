@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'genres/index'
+  get 'genres/create'
   mount ActionCable.server => '/cable'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -32,6 +34,7 @@ Rails.application.routes.draw do
     get 'all', on: :collection, to: 'items#all_items'
 
     get 'search_tag', to: 'items#search_tag'
+    get 'search_genre', to: 'items#search_genre'
   end
 
   namespace :mypage do
@@ -42,4 +45,6 @@ Rails.application.routes.draw do
   resources :notifications, only: %i[index]
 
   resources :chat_rooms, only: %i[index show create destroy]
+
+  resources :genres, only: %i[new index create]
 end

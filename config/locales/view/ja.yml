@@ -31,7 +31,6 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
-      
   users:
     new:
       title: 'アカウント登録'
@@ -76,6 +75,7 @@ ja:
       episode_content: '思い出エピソード'
       reason: '理由'
       tag: 'タグ'
+      genre: "ジャンル"
       comment: 'コメント'
       good: 'いいね！'
     edit:
@@ -91,6 +91,9 @@ ja:
     search_tag:
       title: '検索結果（タグ）'
       no_result: 'タグはありません'
+    search_genre:
+      title: '検索結果（ジャンル）'
+      no_result: 'ジャンルはありません'
   comments:
     delete_confirm: "削除しますか？"
   mypage:

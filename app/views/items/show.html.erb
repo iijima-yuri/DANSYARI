@@ -47,6 +47,12 @@
               <%= link_to tag.name, item_search_tag_path(item_id: @item.id, tag_id: tag.id) %>
             <% end %>
         </div>
+        
+        <div class="mb-5">
+          <p class="text-xl font-bold"><%= t('items.show.genre') %></p>
+          <%= link_to @genre.name, item_search_genre_path(item_id: @item.id, genre_id: @genre.id) %>
+        </div>
+        
         <% if current_user.own?(@item) %>
           <div class="flex justify-end space-x-5">
             <%= link_to t('defaults.edit'), edit_item_path, class: "px-5 py-2 text-xl font-bold text-white transition-all duration-300 bg-yellow-500 rounded cursor-pointer hover:bg-yellow-600"%>
