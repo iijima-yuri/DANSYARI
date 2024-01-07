@@ -1,15 +1,11 @@
-import consumer from "channels/consumer";
+import consumer from "../channels/action_cable";
 
 document.addEventListener('turbo:load', function() {
-  let chatRoomId;
   
   const chats = document.getElementById('chats');
 
   if (chats) {
-    chatRoomId = chats.dataset.id;
-  } else {
-    console.error("Element with id 'chats' not found");
-  }
+    let chatRoomId = chats.dataset.id;
 
   const appRoom = consumer.subscriptions.create(
     {channel: "RoomChannel", chat_rooms: chatRoomId}, {
@@ -45,4 +41,7 @@ document.addEventListener('turbo:load', function() {
       event.preventDefault();
     }
   };
+  } else {
+    console.log("Action Cable is not connected on this page.");
+  }
 });
