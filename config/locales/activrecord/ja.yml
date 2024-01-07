@@ -30,3 +30,5 @@ ja:
         body: 'コメント投稿'
       tag:
         name: 'タグ'
+      genre:
+        name: 'ジャンル'
