@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   mount_uploader :item_image, ItemImageUploader
   belongs_to :user
+  belongs_to :genre
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
@@ -8,6 +9,9 @@ class Item < ApplicationRecord
 
   has_many :item_tags, dependent: :destroy
   has_many :tags, through: :item_tags
+
+  
+
 
   enum reason_status: { trash: 0, stay: 1, worry: 2 }
   enum status: { published: 0, unpublished: 1 }
