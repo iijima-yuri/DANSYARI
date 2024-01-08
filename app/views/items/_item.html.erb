@@ -12,7 +12,7 @@
         <p class="mb-2 text-xl font-bold">by：<%= item.user.name %></p>
       <% end %>
     <% end %>
-      <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3" %></li>
+      <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3 mx-auto" %></li>
       <li>
         <span class="mb-2 text-xl font-bold"><%= t('defaults.tag') %></span>
         <% item.tags.each do |tag| %>
@@ -20,11 +20,15 @@
           <%="(#{tag.items.count})" %>
         <% end %>
       </li>
-      <%= link_to item_search_genre_path(item_id: item.id, genre_id: item.genre.id) do %>
-        <li class="pb-1 text-xl font-bold"><%= t('defaults.genres') %><%= item.genre.name %></li>
-      <% end %>
+      <li>
+        <% if item.genre %>
+          <%= link_to item_search_genre_path(item_id: item.id, genre_id: item.genre.id) do %>
+            <li class="pb-1 text-xl font-bold"><%= t('defaults.genres') %><%= item.genre.name %></li>
+          <% end %>
+        <% end %>
+      </li>
       <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
         <p class="text-lg"><%= item.reason_content %></p>
-    </li>
+      </li>
   </ul>
 </div>

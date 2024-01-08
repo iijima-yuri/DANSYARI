@@ -48,10 +48,12 @@
             <% end %>
         </div>
         
-        <div class="mb-5">
-          <p class="text-xl font-bold"><%= t('items.show.genre') %></p>
-          <%= link_to @genre.name, item_search_genre_path(item_id: @item.id, genre_id: @genre.id) %>
-        </div>
+        <% if @genre %>
+          <div class="mb-5">
+            <p class="text-xl font-bold"><%= t('items.show.genre') %></p>
+            <%= link_to @genre.name, item_search_genre_path(item_id: @item.id, genre_id: @genre.id) %>
+          </div>
+        <% end %>
         
         <% if current_user.own?(@item) %>
           <div class="flex justify-end space-x-5">
