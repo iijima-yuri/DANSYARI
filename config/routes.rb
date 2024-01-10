@@ -35,6 +35,10 @@ Rails.application.routes.draw do
 
     get 'search_tag', to: 'items#search_tag'
     get 'search_genre', to: 'items#search_genre'
+    collection do
+      get 'search', to: 'items#search', as: :search
+    end
+    get 'autocomplete', on: :collection, to: 'items#autocomplete'
   end
 
   namespace :mypage do
@@ -47,4 +51,6 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: %i[index show create destroy]
 
   resources :genres, only: %i[new index create]
+
+  
 end
