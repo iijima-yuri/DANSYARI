@@ -24,7 +24,7 @@
             <i class="fa-solid fa-lock"></i>
             <%= f.label :password, User.human_attribute_name(:password), class:"font-bold text-xl " %><br>
             <%= f.password_field :password, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 w-2/5 mb-5" %>
-            <p><%= t('.password_forget') %><%= link_to t('.password_forget_this'), "#", class:"underline hover:text-white" %></p>
+            <%# <p><%= t('.password_forget')<%= link_to t('.password_forget_this'), "#", class:"underline hover:text-white" %>
           </div>
           <%= f.submit t('defaults.login'), class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-10 py-3 px-20 font-bold mt-10 text-xl"%>
         <% end %>
