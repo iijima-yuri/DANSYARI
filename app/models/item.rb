@@ -17,6 +17,8 @@ class Item < ApplicationRecord
   validates :episode_content, presence: true, length: { maximum: 65_535 }
   validates :reason_content, presence: true, length: { maximum: 65_535 }
 
+  
+
   def favorited?(user)
     favorites.where(user_id: user.id).exists?
   end
@@ -57,5 +59,17 @@ class Item < ApplicationRecord
       tag = Tag.find_or_create_by(name: new_name)
       self.tags << tag
     end
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[user tags genre]
+  end
+
+  def self.ransackable_scopes(auth_object = nil)
+    %i[name_or_user_name_or_genre_name_or_tags_name_eq_all]
   end
 end

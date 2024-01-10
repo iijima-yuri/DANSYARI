@@ -94,3 +94,5 @@ gem 'pry-byebug'
 gem 'kaminari'
 
 gem 'mini_magick'
+
+gem 'ransack', '~> 4.1.1'

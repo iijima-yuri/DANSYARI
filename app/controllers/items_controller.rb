@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :require_login
   before_action :set_item, only: %i[edit update destroy]
 
   def index
@@ -78,6 +79,30 @@ class ItemsController < ApplicationController
     @genre_list = Genre.all
     @genre = Genre.find(params[:genre_id])
     @items = @genre.items
+  end
+
+  def search
+    @q = Item.ransack(params[:q])
+    @search = @q.result(distinct: true)
+    @search_results = @search.page(params[:page]).per(6)
+  end
+
+  def autocomplete
+    @results = []
+
+    items = Item.where("name LIKE ?", "%#{params[:q]}%")
+    tags = Tag.where("name LIKE ?", "%#{params[:q]}%")
+    genres = Genre.where("name LIKE ?", "%#{params[:q]}%")
+    users = User.where("name LIKE ?", "%#{params[:q]}%")
+
+    item_names = items.pluck(:name)
+    tag_names = tags.pluck(:name)
+    genre_names = genres.pluck(:name)
+    user_names = users.pluck(:name)
+
+    @results = (item_names + tag_names + genre_names + user_names).uniq
+    
+    respond_to(&:js)
   end
 
   private

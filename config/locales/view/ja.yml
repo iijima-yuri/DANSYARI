@@ -31,6 +31,9 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
+  static_page:
+    top:
+      all_items: 'すべての品物は'
   users:
     new:
       title: 'アカウント登録'
@@ -94,6 +97,9 @@ ja:
     search_genre:
       title: '検索結果（ジャンル）'
       no_result: 'ジャンルはありません'
+    search:
+      title: '検索結果'
+      no_result: '検索結果がありません'
   comments:
     delete_confirm: "削除しますか？"
   mypage:
