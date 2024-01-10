@@ -49,4 +49,8 @@ class User < ApplicationRecord
     notification = current_user.active_notifications.new(visited_id: id, action: 'follow')
     notification.save if notification.valid?
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name]
+  end
 end
