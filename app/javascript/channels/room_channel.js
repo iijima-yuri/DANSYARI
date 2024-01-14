@@ -1,4 +1,4 @@
-import consumer from "../channels/action_cable";
+import consumer from "../channels/action_cable.js";
 
 document.addEventListener('turbo:load', function() {
   
@@ -25,7 +25,6 @@ document.addEventListener('turbo:load', function() {
       const messages = document.getElementById('messages');
       console.log(messages);
       messages.insertAdjacentHTML('beforeend', data['message']);
-      messages.scrollTop = messages.scrollHeight;
     },
 
     speak: function(message) {
@@ -33,15 +32,17 @@ document.addEventListener('turbo:load', function() {
       
     }
   });
+  
+    const formInput = document.getElementById('talk-form'); 
+    const submitButton = document.getElementById('send-button'); 
 
-  window.document.onkeydown = function(event) {
-    if(event.key == 'Enter') {
-      appRoom.speak(event.target.value);
-      event.target.value = '';
+    submitButton.addEventListener('click', function(event) {
+      appRoom.speak(formInput.value);
+      formInput.value = '';
       event.preventDefault();
-    }
-  };
+    });
+
   } else {
-    console.log("Action Cable is not connected on this page.");
+    console.log("このページではAction Cableが接続されていません。");
   }
 });

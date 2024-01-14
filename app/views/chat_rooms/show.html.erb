@@ -1,28 +1,30 @@
 <%= turbo_frame_tag 'action_cable' do %>
-  <%= javascript_include_tag 'channels/action_cable' %>
+  <script type="module">
+    import consumer from 'channels/action_cable';
+  </script>
 <% end %>
-
 <div class="bg-[#f5eace]">
 <%= render 'shared/header' %>
   <div>
-    <div class="container mx-auto">
+    <div class="container md:mx-auto">
       <h1 class="secondary-title"><%= t('.title') %></h1>
 
-      <div class="mb-5 text-xl font-bold">
+      <div class="mx-10 mb-5 text-xl font-bold">
         <h2>参加者</h2>
         <% @entries.each do |e| %>
           <%= link_to e.user.name, user_path(e.user_id) %>
         <% end %>
       </div>
       
-      <div id= 'messages'>
+      <div id='messages'>
         <div id="chats" data-id ="<%= @chat_room.id %>">
           <%= render partial: 'chat_rooms/message',collection: @messages, as: :message %>
         </div>
       </div>
-      <form>
-        <label class="font-bold">Say something:</label><br>
-        <input type = "text" class="mb-10" id = "talk-form" data-behavior = "chat_room_speaker" data-user = "<%= current_user.id %>" data-room = "<%= @chat_room.id %>">
+      <form class="mx-5 md:mx-auto">
+        <label class="font-bold talk-form">Say something:</label><br>
+        <input type = "text" class="mb-10" id ="talk-form" data-behavior = "chat_room_speaker" data-user = "<%= current_user.id %>" data-room = "<%= @chat_room.id %>">
+        <button type="button" id="send-button" class="px-10 py-2 text-xl font-bold text-white transition-all duration-300 bg-green-500 rounded cursor-pointer hover:bg-green-600">送信</button>
       </form>
     </div>
   </div>
