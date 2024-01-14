@@ -6,9 +6,9 @@
         <%= f.text_field :name, class: "form-control w-3/5", id: "item_name" %>
       </div>
       <div class="pt-3 form-group">
-        <%= image_tag item.item_image.url, id: 'preview', size:'400x400',data: { turbo: false } %>
+        <%= image_tag item.item_image.url, size:'400x400',data: { turbo: false } %>
         <%= f.hidden_field :item_image_cache %>
-        <%= f.file_field :item_image, onchange: 'previewImage()', class: "form-control mt-3", accept: 'image/*' %>
+        <%= f.file_field :item_image, class: "form-control mt-3", accept: 'image/*' %>
       </div>
     </div>
     
