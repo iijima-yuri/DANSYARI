@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
 
+  resources :contacts, only: %i[index] do
+    collection do
+      post 'confirm'
+      get 'done'
+    end
+  end
+
   resources :users, only: %i[new create show index] do
     member do
       get 'favorites'
