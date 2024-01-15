@@ -31,9 +31,11 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
-  static_page:
-    top:
-      all_items: 'すべての品物は'
+  static_pages:
+    terms_of_service:
+      title: '利用規約'
+    privacy_policy:
+      title: 'プライバシーポリシー'
   users:
     new:
       title: 'アカウント登録'

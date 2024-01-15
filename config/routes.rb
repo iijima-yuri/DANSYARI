@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
+  get 'terms_of_service', to: 'static_pages#terms_of_service'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
+
   resources :users, only: %i[new create show index] do
     member do
       get 'favorites'
@@ -51,6 +54,4 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: %i[index show create destroy]
 
   resources :genres, only: %i[new index create]
-
-  
 end

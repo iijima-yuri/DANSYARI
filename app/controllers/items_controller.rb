@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
   before_action :require_login
+  skip_before_action :require_login, only: %i[index show search autocomplete]
   before_action :set_item, only: %i[edit update destroy]
 
   def index
-    @items = Item.published.includes(:user, :genre).order(created_at: :desc).page(params[:page]).per(6)
+    @items = Item.published.includes(:user, :genre, :tags).order(created_at: :desc).page(params[:page]).per(6)
     @tag_list = Tag.all
   end
 
@@ -101,7 +102,7 @@ class ItemsController < ApplicationController
     user_names = users.pluck(:name)
 
     @results = (item_names + tag_names + genre_names + user_names).uniq
-    
+
     respond_to(&:js)
   end
 
@@ -112,6 +113,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :episode_content, :reason_content, :item_image, :item_image_cache, :reason_status, :status, :genre_id)
+    params.require(:item).permit(:name, :episode_content, :reason_content, :item_image, :item_image_cache, :reason_status, :status, :genre_id, tag_list: [])
   end
 end

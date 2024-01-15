@@ -96,3 +96,9 @@ gem 'kaminari'
 gem 'mini_magick'
 
 gem 'ransack', '~> 4.1.1'
+
+group :production do
+  gem "aws-sdk-s3", require: false
+end
+
+gem 'fog-aws'
