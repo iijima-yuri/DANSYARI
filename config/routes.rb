@@ -54,5 +54,4 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: %i[index show create destroy]
 
   resources :genres, only: %i[new index create]
-
 end

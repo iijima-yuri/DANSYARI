@@ -17,8 +17,6 @@ class Item < ApplicationRecord
   validates :episode_content, presence: true, length: { maximum: 65_535 }
   validates :reason_content, presence: true, length: { maximum: 65_535 }
 
-  
-
   def favorited?(user)
     favorites.where(user_id: user.id).exists?
   end
