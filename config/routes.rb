@@ -19,10 +19,11 @@ Rails.application.routes.draw do
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
 
-  resources :contacts, only: %i[index] do
+  resources :contacts, only: %i[new create] do
     collection do
-      post 'confirm'
-      get 'done'
+      post 'confirm', to: 'contacts#confirm', as: 'confirm'
+      post 'back', to: 'contacts#back', as: 'back'
+      get 'done', to: 'contacts#done', as: 'done'
     end
   end
 
