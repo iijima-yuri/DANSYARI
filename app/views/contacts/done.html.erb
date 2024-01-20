@@ -1,0 +1,17 @@
+<%= content_for(:title, t('.title')) %>
+<div class="bg-[#f5eace]">
+<% if logged_in? %>
+  <%= render 'shared/header' %>
+<% else %>
+  <%= render 'shared/before_login_header' %>
+<% end %>
+  <div>
+    <div class="container mx-auto">
+      <h1 class="secondary-title"><%= t('.title') %></h1>
+      <div class="pb-20 mx-10">
+        <p>お問い合わせありがとうございました。<br>
+          お問い合わせ内容を送信しました。<p>
+      </div>
+    </div>
+  </div>
+</div>
