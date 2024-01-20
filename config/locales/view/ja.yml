@@ -22,6 +22,7 @@ ja:
     unfollow: 'フォローを外す' 
     edit: '編集'
     destroy: '削除'
+    registration: "確認"
     message:
       require_login: 'ログインしてください'
       created: '%{item}を作成しました'
@@ -135,3 +136,15 @@ ja:
       title: 'メッセージ一覧'
     show:
       title: 'チャットルーム'
+  contacts:
+    new:
+      title: 'お問い合わせ'
+    confirm:
+      title: 'お問い合わせ（確認）'
+      name: 'お名前'
+      email: 'メールアドレス'
+      content: 'お問い合わせ内容'
+      submit: '送信'
+      back: '戻る'
+    done:
+      title: 'お問い合わせ（完了）'

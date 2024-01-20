@@ -127,6 +127,10 @@ GEM
       reline (>= 0.3.1)
     dockerfile-rails (1.5.12)
       rails (>= 3.0.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.1.1)
       ruby2_keywords
     enum_help (0.0.19)
@@ -410,6 +414,7 @@ DEPENDENCIES
   carrierwave (~> 3.0)
   debug
   dockerfile-rails (>= 1.5)
+  dotenv-rails
   enum_help
   fog-aws
   importmap-rails
