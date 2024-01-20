@@ -14,6 +14,7 @@ ja:
       item: '品物'
       comment: 'コメント'
       tag: 'タグ'
+      contact: 'お問い合わせ'
     attributes:
       user:
         email: 'メールアドレス'
@@ -32,3 +33,7 @@ ja:
         name: 'タグ'
       genre:
         name: 'ジャンル'
+      contact:
+        name: 'お名前'
+        email: 'メールアドレス'
+        content: 'お問い合わせ内容'
