@@ -1,21 +1,48 @@
 <header class="bg-white">
-  <nav class="container">
-    <div class="flex items-center justify-between px-4 md:text-end">
-      <%= link_to image_tag("logo-header.png", size: '75x75'), root_path, class:"inline" %>
+    <div>
+      <div class="relative flex items-center justify-between">
+        <div><%= link_to image_tag("logo-header.png", size: '75x75'), root_path, class:"inline" %></div>
+        <nav>
+          <button id="button" type="button" class="absolute z-20 mx-auto right-8 top-6">
+            <i id="bars" class="fa-bars fa-solid fa-2xl"></i>
+            <i id="xmark" class="fixed invisible fa-solid fa-x"></i>
+          </button>
+          <div class="mr-20"><%= render 'shared/circle' %></div>
+          <ul id="menu" class="fixed top-0 left-0 z-10 w-full text-center transition ease-linear translate-x-full bg-white">
+            <li class="p-5 pb-2"><%= link_to items_path, class:"hover:text-lime-800 transition-all duration-300 font-bold text-base" do %>
+              <i class="fa-solid fa-gift"></i>
+              <%= t('defaults.items') %>
+            <% end %></li>
+
+            <li class="pb-2"><%= link_to new_item_path, class:"hover:text-lime-800 transition-all duration-300 font-bold text-base" do %>
+              <i class="fa-solid fa-pen"></i>
+              <%= t('defaults.items_new') %>
+            <% end %></li>
       
-      <div>
-        <%= render 'shared/circle' %>
-  
-        <%= link_to mypage_profile_path, class:"hover:text-lime-800 transition-all duration-300 mr-5 font-bold sm:text-base text-sm" do %>
-          <i class="fa-solid fa-user"></i>
-          <%= t('defaults.my_page') %>
-        <% end %>
-      
-        <%= link_to logout_path, data: { turbo_method: :delete }, class: "hover:text-lime-800 transition-all duration-300 font-bold sm:text-base text-sm" do %>
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <%= t('defaults.logout') %>
-        <% end %>
+            <li class="pb-2"><%= link_to users_path, class:"hover:text-lime-800 transition-all duration-300 font-bold text-base" do %>
+              <i class="fa-solid fa-comment"></i>
+              <%= t('defaults.chat_rooms') %>
+            <% end %></li>
+
+            <li class="pb-3"><%= link_to mypage_profile_path, class:"hover:text-lime-800 transition-all duration-300 font-bold text-base" do %>
+              <i class="fa-solid fa-user"></i>
+              <%= t('defaults.my_page') %>
+            <% end %></li>
+          
+            <li class="pb-3"><%= link_to logout_path, data: { turbo_method: :delete }, class: "hover:text-lime-800 transition-all duration-300 font-bold text-base" do %>
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <%= t('defaults.logout') %>
+            <% end %></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </nav>
 </header>
+
+<script>
+  button.addEventListener('click', event => {
+    bars.classList.toggle('invisible');
+    xmark.classList.toggle('invisible');
+    menu.classList.toggle('translate-x-full');
+  })
+</script>

@@ -1,7 +1,10 @@
 <div class="mb-5">
   <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
     <%= link_to item_path(item) do %>
-      <li class="pb-1 text-xl font-bold"><%= t('defaults.name') %><%= item.name %></li>
+    <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3 mx-auto" %></li>
+    <% end %>
+    <%= link_to item_path(item) do %>
+      <li class="pb-1 text-xl font-bold"><%= item.name %></li>
     <% end %>
     <% if logged_in? %>
       <% if current_user.own?(item) %>
@@ -16,7 +19,6 @@
     <% else %>
       <p class="mb-2 text-xl font-bold">by：<%= item.user.name %></p>
     <% end %>
-      <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3 mx-auto" %></li>
       <li>
         <span class="mb-2 text-xl font-bold"><%= t('defaults.tag') %></span>
         <% item.tags.each do |tag| %>

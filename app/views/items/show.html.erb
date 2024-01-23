@@ -10,7 +10,7 @@
   
     <div class="-mx-2 md:flex">
       <div class="px-10 pb-3 mb-8 text-xl font-bold md:w-1/2">
-        <%= t('items.show.name') %><%= @item.name %><br>
+        <%= @item.name %><br>
         <% if logged_in? %>
           <% if current_user.own?(@item) %>
             <%= link_to mypage_profile_path do %>

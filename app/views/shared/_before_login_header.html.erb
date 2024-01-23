@@ -1,15 +1,39 @@
-<header>
-  <nav class="container p-4 mx-auto text-end">
-    <div class="block space-x-12 md:text-end">
-      <%= link_to new_user_path, class:"hover:text-lime-800 transition-all duration-300 font-bold" do %>
-        <i class="fa-solid fa-user"></i>
-        <%= t('defaults.register')%>
-      <% end %>
-      
-      <%= link_to login_path, class:"hover:text-lime-800 transition-all duration-300 font-bold" do %>
-        <i class="fa-solid fa-right-to-bracket"></i>
-        <%= t('defaults.login') %>
-      <% end %>
+<header class="bg-white">
+  <div>
+    <div class="relative flex items-center justify-between">
+      <div><%= link_to image_tag("logo-header.png", size: '75x75'), root_path, class:"inline" %></div>
+      <nav class="container mx-auto text-end">
+        
+        <button id="button" type="button" class="absolute z-20 mx-auto right-8 top-6">
+          <i id="bars" class="md:invisible fa-bars fa-solid fa-2xl"></i>
+          <i id="xmark" class="fixed invisible fa-solid fa-x"></i>
+        </button>
+        
+        <ul id="menu" class="fixed top-0 left-0 z-10 w-full py-4 text-center transition ease-linear translate-x-full bg-white md:items-center md:space-x-12 md:translate-x-0 md:flex md:justify-end md:px-4 md:bg-transparent md:static">
+          <li class="m-2 md:m-0"><%= link_to items_path, class:"hover:text-lime-800 transition-all duration-300 font-bold text-base" do %>
+            <i class="fa-solid fa-gift"></i>
+            <%= t('defaults.items') %>
+          <% end %></li>
+          
+          <li class="pb-2 md:pb-0"><%= link_to new_user_path, class:"hover:text-lime-800 transition-all duration-300 font-bold" do %>
+            <i class="fa-solid fa-user"></i>
+            <%= t('defaults.register')%>
+          <% end %></li>
+          
+          <li class="pb-2 md:pb-0"><%= link_to login_path, class:"hover:text-lime-800 transition-all duration-300 font-bold" do %>
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <%= t('defaults.login') %>
+          <% end %></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </div>
 </header>
+
+<script>
+  button.addEventListener('click', event => {
+    bars.classList.toggle('invisible');
+    xmark.classList.toggle('invisible');
+    menu.classList.toggle('translate-x-full');
+  })
+</script>

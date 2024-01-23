@@ -1,19 +1,6 @@
 <%= content_for(:title, t('.title')) %>
 <div class="bg-[#f5eace]">
-  <header class="bg-white">
-    <nav class="container">
-      <div class="flex items-center justify-between px-4 md:text-end">
-        <%= link_to image_tag("logo-header.png", size: '75x75'), root_path, class:"inline" %>
-        <div>
-          <%= render 'shared/circle' %>
-          <%= link_to logout_path, data: { turbo_method: :delete }, class: "hover:text-lime-800 transition-all duration-300 font-bold sm:text-base text-sm" do %>
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <%= t('defaults.logout') %>
-          <% end %>
-        </div>
-      </div>
-    </nav>
-  </header>
+<%= render 'shared/header' %>
   
   <div class="container mx-auto">
     <h1 class="secondary-title"><%= t('.title') %></h1>
@@ -50,19 +37,19 @@
         </div>
         <div class="flex justify-between mt-20 mb-20">
           <div>
-            <%= link_to trashed_items_path do %>
+            <%= link_to trashed_item_path(@user) do %>
               <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.trash_items') %></p>
               <p class="text-3xl text-center underline"><%= current_user.items.where(reason_status: 'trash').count %>件</p>
             <% end %>
           </div>
           <div>
-            <%= link_to stay_items_path do %>
+            <%= link_to stay_item_path(@user) do %>
               <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.stay_items') %></p>
               <p class="text-3xl text-center underline"><%= current_user.items.where(reason_status: 'stay').count %>件</p>
             <% end %>
           </div>
           <div>
-            <%= link_to worry_items_path do %>
+            <%= link_to worry_item_path(@user) do %>
               <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.worry_items') %></p>
               <p class="text-3xl text-center underline"><%= current_user.items.where(reason_status: 'worry').count %>件</p>
             <% end %>
