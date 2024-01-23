@@ -2,4 +2,5 @@
 import "@hotwired/turbo-rails" 
 import "controllers"
 import "channels"
-import "./preview.js"
+import "./item_preview.js"
+import "./icon_preview.js"
