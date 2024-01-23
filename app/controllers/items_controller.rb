@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.published.includes(:user, :genre, :tags).order(created_at: :desc).page(params[:page]).per(6)
     @tag_list = Tag.all
+    @q = Item.ransack(params[:q])
   end
 
   def new
@@ -55,15 +56,21 @@ class ItemsController < ApplicationController
   end
 
   def trashed_items
-    @trashed_items = current_user.items.where(reason_status: 'trash')
+    @user = User.find(params[:id])
+    @trashed_items = Item.where(user_id: current_user.id, reason_status: 'trash')
+    @trashed_items_for_user = Item.where(user_id: params[:id], reason_status: 'trash')
   end
 
   def stay_items
-    @stay_items = current_user.items.where(reason_status: 'stay')
+    @user = User.find(params[:id])
+    @stay_items = Item.where(user_id: current_user.id, reason_status: 'stay')
+    @stay_items_for_user = Item.where(user_id: params[:id], reason_status: 'stay')
   end
 
   def worry_items
-    @worry_items = current_user.items.where(reason_status: 'worry')
+    @user = User.find(params[:id])
+    @worry_items = Item.where(user_id: current_user.id, reason_status: 'worry')
+    @worry_items_for_user = Item.where(user_id: params[:id], reason_status: 'worry')
   end
 
   def all_items
@@ -73,13 +80,13 @@ class ItemsController < ApplicationController
   def search_tag
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
-    @items = @tag.items
+    @items = @tag.items.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def search_genre
     @genre_list = Genre.all
     @genre = Genre.find(params[:genre_id])
-    @items = @genre.items
+    @items = @genre.items.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def search
