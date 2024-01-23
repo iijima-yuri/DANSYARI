@@ -4,10 +4,18 @@
     <div class="container mx-auto">
       <h1 class="secondary-title"><%= t('.title') %></h1>
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto place-content-center place-items-center">
-        <% if @stay_items.present? %>
-          <%= render @stay_items %>
+        <% if current_user.id == @user.id %>
+          <% if @stay_items.present? %>
+            <%= render @stay_items %>
+          <% else %>
+            <p><%= t('.no_result') %></p>
+          <% end %>
         <% else %>
-          <p><%= t('.no_result') %></p>
+          <% if @stay_items_for_user.present? %>
+            <%= render @stay_items_for_user %>
+          <% else %>
+            <p><%= t('.no_result') %></p>
+          <% end %>
         <% end %>
       </div>
     </div>

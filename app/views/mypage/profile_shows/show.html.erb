@@ -36,16 +36,22 @@
         </div>
         <div class="flex justify-center mt-20 mb-20 md:space-x-12">
           <div>
-            <p class="mb-5 text-2xl text-center"><%= t('mypage.profiles.show.trash_items') %></p>
-            <p class="text-3xl text-center"><%= @user.items.where(reason_status: 'trash').count %>件</p>
+            <%= link_to trashed_item_path do %>
+              <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.trash_items') %></p>
+              <p class="text-3xl text-center underline"><%= @user.items.where(reason_status: 'trash').count %>件</p>
+            <% end %>
           </div>
           <div>
-            <p class="mb-5 text-2xl text-center"><%= t('mypage.profiles.show.stay_items') %></p>
-            <p class="text-3xl text-center"><%= @user.items.where(reason_status: 'stay').count %>件</p>
+            <%= link_to stay_item_path do %>
+              <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.stay_items') %></p>
+              <p class="text-3xl text-center underline"><%= @user.items.where(reason_status: 'stay').count %>件</p>
+            <% end %>
           </div>
           <div>
-            <p class="mb-5 text-2xl text-center"><%= t('mypage.profiles.show.worry_items') %></p>
-            <p class="text-3xl text-center"><%= @user.items.where(reason_status: 'worry').count %>件</p>
+            <%= link_to worry_item_path do %>
+              <p class="mb-5 text-2xl text-center md:mb-2"><%= t('mypage.profiles.show.worry_items') %></p>
+              <p class="text-3xl text-center underline"><%= @user.items.where(reason_status: 'worry').count %>件</p>
+            <% end %>
           </div>
         </div>
       </div>

@@ -39,9 +39,9 @@ Rails.application.routes.draw do
   resources :items do
     resources :comments, only: %i[create destroy]
     resource :favorites, only: %i[create destroy]
-    get 'trashed', on: :collection, to: 'items#trashed_items'
-    get 'stay', on: :collection, to: 'items#stay_items'
-    get 'worry', on: :collection, to: 'items#worry_items'
+    get 'trashed', on: :member, to: 'items#trashed_items'
+    get 'stay', on: :member, to: 'items#stay_items'
+    get 'worry', on: :member, to: 'items#worry_items'
     get 'all', on: :collection, to: 'items#all_items'
 
     get 'search_tag', to: 'items#search_tag'
