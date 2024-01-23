@@ -1,7 +1,10 @@
 <div class="mb-5">
   <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
     <%= link_to item_path(item) do %>
-      <li class="pb-1 text-xl font-bold"><%= t('defaults.name') %><%= item.name %></li>
+      <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3 mx-auto" %></li>
+    <% end %>
+    <%= link_to item_path(item) do %>
+      <li class="pb-1 text-xl font-bold"><%= item.name %></li>
     <% end %>
     <% if current_user.own?(item) %>
       <%= link_to mypage_profile_path do %>
@@ -29,6 +32,9 @@
         <%= link_to item.genre.name, item_search_genre_path(item_id: item.id, genre_id: item.genre.id) %>
       </li>
     
+      <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
+        <p class="text-lg"><%= item.reason_content %></p>
+      </li>
     
     </li>
   </ul>
