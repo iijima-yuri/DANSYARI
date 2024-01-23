@@ -9,6 +9,9 @@ ja:
     register: 'アカウント登録'
     my_page: 'マイページ'
     notification: '通知'
+    items: '品物一覧'
+    items_new: '品物投稿フォーム'
+    chat_rooms: 'チャットルーム'
     contact: 'お問い合わせ'
     privacy_policy: 'プライバシーポリシー'
     terms_of_service: '利用規約'
@@ -88,10 +91,13 @@ ja:
       title: "品物詳細(編集)"
     trashed_items:
       title: '捨てた品物'
+      no_result: '捨てた品物はありません'
     stay_items:
       title: '残した品物'
+      no_result: '残す品物はありません'
     worry_items:
       title: '悩み中の品物'
+      no_result: '悩み中の品物はありません'
     all_items:
       title: '思い出の品物一覧'
     search_tag:
