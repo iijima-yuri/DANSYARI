@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, info: t('.success')
+      session[:user_id] = @user.id
+      redirect_to items_path, info: t('.success')
     else
       flash.now[:error] = t('.fail')
       render :new, status: :unprocessable_entity
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
   def favorites
     @user = User.find(params[:id])
     favorites = Favorite.where(user_id: @user.id).pluck(:item_id)
-    @favorite_items = Item.find(favorites)
+    @favorite_items = Item.where(id: favorites).order(created_at: :desc).page(params[:page]).per(6)
   end
 
   private
