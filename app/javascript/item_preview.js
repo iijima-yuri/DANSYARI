@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('turbo:load', function(){
   const postForm = document.getElementById('new_item');
   const previewList = document.getElementById('previews');
   if (!postForm) return null;
