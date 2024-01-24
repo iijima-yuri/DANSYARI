@@ -16,6 +16,7 @@ class Item < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
   validates :episode_content, presence: true, length: { maximum: 65_535 }
   validates :reason_content, presence: true, length: { maximum: 65_535 }
+  validates :item_image, presence: true
 
   def favorited?(user)
     favorites.where(user_id: user.id).exists?
