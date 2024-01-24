@@ -74,7 +74,7 @@ class ItemsController < ApplicationController
   end
 
   def all_items
-    @all_items = current_user.items
+    @all_items = current_user.items.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def search_tag
