@@ -18,7 +18,7 @@
     <div class="px-10 pb-5 md:w-1/2">
       <div class="form-group">
         <%= f.label :episode_content, Item.human_attribute_name(:episode_content) %><br>
-        <%= f.text_area :episode_content, class:"form-control h-24 w-full", id:"item_episode_content", placeholder: "家族との旅行で持っていきました。" %>
+        <%= f.text_area :episode_content, class:"form-control h-24 w-full", id:"item_episode_content", placeholder: "家族との旅行で持っていきました" %>
       </div>
       
       <div class="form-group">
@@ -30,7 +30,7 @@
         <%= f.label :reason_status, t('enums.item.reason_status.worry') %>
         
         <%= f.label :reason_content, Item.human_attribute_name(:reason_content) %><br>
-        <%= f.text_area :reason_content, class:"form-control h-24 w-full", placeholder: "古くなったから捨てます。" %>
+        <%= f.text_area :reason_content, class:"form-control h-24 w-full", placeholder: "古くなったから捨てます" %>
       </div>
 
       <div class="form-group">
