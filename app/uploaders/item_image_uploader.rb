@@ -32,7 +32,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process resize_and_pad: [300, 300, "#eee5bc", "Center"]
+  process resize_and_pad: [300, 300, "#ffffff", "Center"]
   #
   # def scale(width, height)
   #   # do something
@@ -40,7 +40,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_and_pad: [400, 400, "#f5eace", "Center"]
+    process resize_and_pad: [400, 400, "#ffffff", "Center"]
   end
 
   # version :item_image_large do
