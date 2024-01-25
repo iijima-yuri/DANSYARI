@@ -10,6 +10,9 @@
       <% end %>
       さんが
       <% case notification.action %>
+      <% when 'chat' %>
+        <%= link_to 'あなたにメッセージ', users_path(notification.message) %>
+        を送りました
       <% when 'follow' %>
         あなたをフォローしました
       <% when 'favorite' %>
