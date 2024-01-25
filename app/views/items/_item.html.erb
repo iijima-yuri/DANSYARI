@@ -1,5 +1,5 @@
 <div class="mb-5">
-  <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
+  <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc] w-[330px] h-[545px]">
     <%= link_to item_path(item) do %>
     <li><%= image_tag item.item_image.url, size: '300x300', class:"pb-3 mx-auto" %></li>
     <% end %>
@@ -34,7 +34,7 @@
         <% end %>
       </li>
       <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
-        <span class="text-lg"><%= item.reason_content %></span>
+        <p class="text-lg line-clamp-2"><%= item.reason_content %></p>
       </li>
   </ul>
 </div>
