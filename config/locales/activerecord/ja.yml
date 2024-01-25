@@ -15,6 +15,7 @@ ja:
       comment: 'コメント'
       tag: 'タグ'
       contact: 'お問い合わせ'
+      genre: 'ジャンル'
     attributes:
       user:
         email: 'メールアドレス'
@@ -25,8 +26,10 @@ ja:
         icon: 'アイコン'
       item:
         name: '品物名'
+        item_image: '画像'
         episode_content: '思い出エピソード'
         reason_content: '理由'
+        genre: 'ジャンル'
       comment:
         body: 'コメント投稿'
       tag:
@@ -37,3 +40,11 @@ ja:
         name: 'お名前'
         email: 'メールアドレス'
         content: 'お問い合わせ内容'
+    errors:
+      models:
+        item:
+          attributes:
+            item_image:
+              blank: 'を選択してください'
+            genre:
+              blank: 'を選択してください'

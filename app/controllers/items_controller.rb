@@ -21,7 +21,8 @@ class ItemsController < ApplicationController
       @item.save_tags(tag_list)
       redirect_to items_path, info: t('defaults.message.created', item: Item.model_name.human)
     else
-      render :new
+      flash.now[:error] = t('defaults.message.not_created', item: Item.model_name.human)
+      render :new, status: :unprocessable_entity
     end
   end
 
