@@ -1,58 +1,58 @@
 <%= form_with model: item, local: true, id: "new_item" do |f| %>
-  <div class="-mx-2 md:flex">
-    <div class="px-10 mb-8 md:w-1/2">
-      <div class="form-group">
-        <%= f.label :name, Item.human_attribute_name(:name) %>
-        <%= f.text_field :name, class: "form-control w-3/5", id: "item_name", placeholder: "カバン" %>
+  <%= render 'shared/error_messages', model: f.object %>
+    <div class="-mx-2 md:flex">
+      <div class="px-10 mb-8 md:w-1/2">
+        <div class="form-group">
+          <%= f.label :name, Item.human_attribute_name(:name) %>
+          <%= f.text_field :name, class: "form-control w-3/5", id: "item_name", placeholder: "カバン" %>
+        </div>
+        <div class="pt-3 form-group">
+        <%= image_tag item.item_image.url, id: 'preview', size:'400x400', data: { turbo: false } %>
+        <div id="previews"></div>
+          <div class="click-upload">
+            <%= f.hidden_field :item_image_cache %>
+            <%= f.file_field :item_image, class: "form-control mt-3" %>
+          </div>
+        </div>
       </div>
-      <div class="pt-3 form-group">
-      <%= image_tag item.item_image.url, id: 'preview', size:'400x400', data: { turbo: false } %>
-      <div id="previews"></div>
-        <div class="click-upload">
-          <%= f.hidden_field :item_image_cache %>
-          <%= f.file_field :item_image, class: "form-control mt-3" %>
+      
+      <div class="px-10 pb-5 md:w-1/2">
+        <div class="form-group">
+          <%= f.label :episode_content, Item.human_attribute_name(:episode_content) %>
+          <%= f.text_area :episode_content, class:"form-control h-24 w-full", id:"item_episode_content", placeholder: "家族との旅行で持っていきました" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.radio_button :reason_status, :trash, id: "item_reason_status" %>
+          <%= f.label :reason_status, t('enums.item.reason_status.trash'), id: "item_reason_status" %>
+          <%= f.radio_button :reason_status, :stay %>
+          <%= f.label :reason_status, t('enums.item.reason_status.stay') %>
+          <%= f.radio_button :reason_status, :worry %>
+          <%= f.label :reason_status, t('enums.item.reason_status.worry') %>
+          <span>理由</span>
+          <%= f.text_area :reason_content, class:"form-control h-24 w-full", placeholder: "古くなったから捨てます" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :tag_list, Tag.human_attribute_name(:name) %><br>
+          <%= f.text_field :tag_list, value: @tag_list, class: "form-control w-full", placeholder: ',で区切ると複数のタグが登録できます' %>
+        </div>
+        
+        <div class="pt-1 form-group">
+          <%= f.label :name, Genre.human_attribute_name(:name) %>
+          <div><%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: '選択してください' }, class: 'form-control w-full' %></div>
+        </div>
+        
+        <div class="pt-1 form-group">
+          <%= f.radio_button :status, :published, id: "item_status" %>
+          <%= f.label :status, t('enums.item.status.published'), id: "item_status" %>
+          <%= f.radio_button :status, :unpublished %>
+          <%= f.label :status, t('enums.item.status.unpublished') %>
+        </div>
+          
+        <div class="mt-5 text-center md:text-end">
+          <%= f.submit t('defaults.submission'), class:"bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded py-3 px-12 font-bold text-xl cursor-pointer " %>
         </div>
       </div>
     </div>
-    
-    <div class="px-10 pb-5 md:w-1/2">
-      <div class="form-group">
-        <%= f.label :episode_content, Item.human_attribute_name(:episode_content) %><br>
-        <%= f.text_area :episode_content, class:"form-control h-24 w-full", id:"item_episode_content", placeholder: "家族との旅行で持っていきました。" %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.radio_button :reason_status, :trash, id: "item_reason_status" %>
-        <%= f.label :reason_status, t('enums.item.reason_status.trash'), id: "item_reason_status" %>
-        <%= f.radio_button :reason_status, :stay %>
-        <%= f.label :reason_status, t('enums.item.reason_status.stay') %>
-        <%= f.radio_button :reason_status, :worry %>
-        <%= f.label :reason_status, t('enums.item.reason_status.worry') %>
-        
-        <%= f.label :reason_content, Item.human_attribute_name(:reason_content) %><br>
-        <%= f.text_area :reason_content, class:"form-control h-24 w-full", placeholder: "古くなったから捨てます。" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :tag_list, Tag.human_attribute_name(:name) %><br>
-        <%= f.text_field :tag_list, value: @tag_list, class: "form-control w-full", placeholder: ',で区切ると複数のタグが登録できます' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :genre, Genre.human_attribute_name(:name) %><br>
-        <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.radio_button :status, :published, id: "item_status" %>
-        <%= f.label :status, t('enums.item.status.published'), id: "item_status" %>
-        <%= f.radio_button :status, :unpublished %>
-        <%= f.label :status, t('enums.item.status.unpublished') %>
-      </div>
-        
-      <div class="mt-5 text-center md:text-end">
-        <%= f.submit t('defaults.submission'), class:"bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded py-3 px-12 font-bold text-xl cursor-pointer " %>
-      </div>
-    </div>
-  </div>
 <% end %>

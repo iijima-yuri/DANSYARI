@@ -18,22 +18,22 @@
           <div class="form-graup">
             <i class="fa-solid fa-user"></i>
             <%= f.label :name, class:"font-bold text-xl mb-1" %><br>
-            <%= f.text_field :name, placeholder:"eri", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
+            <%= f.text_field :name, placeholder:"eri", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 md:w-2/5 w-4/5" %>
           </div>
           <div class="form-graup">
             <i class="fa-solid fa-envelope"></i>
             <%= f.label :email, class:"font-bold text-xl" %><br>
-            <%= f.email_field :email, placeholder:"sample@example.com", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
+            <%= f.email_field :email, placeholder:"sample@example.com", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 md:w-2/5 w-4/5" %>
           </div>
           <div class="form-graup">
             <i class="fa-solid fa-lock"></i>
             <%= f.label :password, class:"font-bold text-xl " %><br>
-            <%= f.password_field :password, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
+            <%= f.password_field :password, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 md:w-2/5 w-4/5" %>
           </div>
           <div class="form-graup">
             <i class="fa-solid fa-lock"></i>
             <%= f.label :password_confirmation, class:"font-bold text-xl" %><br>
-            <%= f.password_field :password_confirmation, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-2/5" %>
+            <%= f.password_field :password_confirmation, placeholder:"password", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 md:w-2/5 w-4/5" %>
           </div>
           <%= f.submit t('defaults.register'), class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-4 py-3 px-20 font-bold mt-10 text-xl"%>
         <% end %>

@@ -3,6 +3,7 @@ ja:
     pagination:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
+      truncate: '...'
   defaults:
     login: 'ログイン'
     logout: 'ログアウト'
@@ -35,6 +36,9 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
+  errors:
+    messages:
+      max_size_error: 'ファイルサイズが大きすぎます。最大サイズは %{max_size} です'
   static_pages:
     terms_of_service:
       title: '利用規約'
@@ -74,7 +78,6 @@ ja:
       title: '投稿フォーム'
       name: '品物名'
       episode_content: '思い出エピソード'
-      reason_content: '理由'
       item_image: '写真'
       tag: 'タグ'
       genre: 'ジャンル'

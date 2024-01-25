@@ -1,7 +1,5 @@
 class Item < ApplicationRecord
   mount_uploader :item_image, ItemImageUploader
-  belongs_to :user
-  belongs_to :genre
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
@@ -14,8 +12,12 @@ class Item < ApplicationRecord
   enum status: { published: 0, unpublished: 1 }
 
   validates :name, presence: true, length: { maximum: 255 }
+  validates :item_image, presence: true
   validates :episode_content, presence: true, length: { maximum: 65_535 }
   validates :reason_content, presence: true, length: { maximum: 65_535 }
+
+  belongs_to :user
+  belongs_to :genre
 
   def favorited?(user)
     favorites.where(user_id: user.id).exists?
