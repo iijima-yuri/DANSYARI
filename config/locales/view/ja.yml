@@ -21,7 +21,6 @@ ja:
     reason: '理由：'
     tag: 'タグ：'
     genres: 'ジャンル：'
-    user_name: 'ユーザー名：'
     follow: 'フォローする'
     unfollow: 'フォローを外す' 
     edit: '編集'

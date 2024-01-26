@@ -7,7 +7,7 @@
         <% @followeds.each do |followed| %>
           <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
             <li class="pb-1 text-xl font-bold"><%= link_to user_path(followed.followed.id) do %>
-              <%= t('defaults.user_name')%><%= followed.followed.name %>
+              <%= followed.followed.name %>
             <% end %></li>
           </ul>
         <% end %>
