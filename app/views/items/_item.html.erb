@@ -26,15 +26,18 @@
           <%="(#{tag.items.count})" %>
         <% end %>
       </li>
-      <li>
+      <li class="pb-1 text-xl font-bold">
         <% if item.genre %>
           <%= link_to item_search_genre_path(item_id: item.id, genre_id: item.genre.id) do %>
-            <li class="pb-1 text-xl font-bold"><%= t('defaults.genres') %><%= item.genre.name %></li>
+            <%= t('defaults.genres') %><%= item.genre.name %></li>
           <% end %>
         <% end %>
       </li>
-      <li><p class="text-xl font-bold"><%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
-        <p class="text-lg line-clamp-2"><%= item.reason_content %></p>
+      <li><p class="text-xl font-bold">
+          <%= link_to item_path(item) do %>
+            <%= item.reason_status_i18n %><%= t('defaults.reason') %></p>
+            <p class="text-lg line-clamp-2"><%= item.reason_content %></p>
+          <% end %>
       </li>
   </ul>
 </div>
