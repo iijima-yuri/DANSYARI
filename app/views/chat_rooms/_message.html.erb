@@ -1,4 +1,19 @@
-<div class="mx-10 mb-5 md:mx-auto">
-  <p><span><%= "#{message.created_at.strftime("%Y/%m/%d %H:%M")}"%></span><br>
-  <%= "#{message.user.name}： #{message.message}" %></p>
+<div class="mx-10 mb-5 md:mx-auto" style="text-align: right;">
+  <p class="message_<%= message.id %>">
+	<span><%= message.user.name %></span><br>
+		<span class="messege border-2 border-solid bg-[#e9d478] border-black rounded-xl px-5"><%= message.message %></span><br>
+		<span><%= message.created_at.strftime("%Y/%m/%d %H:%M") %></span>
+
+	</p>
 </div>
+<script>
+	var messageUserId = <%= message.user.id %>;
+	var messageElement = document.querySelector(".message_<%= message.id %>");
+	var dmUserElement = document.getElementById('current_user');
+  var currentUser = dmUserElement.getAttribute('data-user_id');
+	if (messageUserId == currentUser) {
+		messageElement.style.textAlign = 'right';
+	} else {
+		messageElement.style.textAlign = 'left';
+	}
+</script>
