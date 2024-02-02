@@ -18,6 +18,15 @@
           <% end %>
         <% end %>
       </div>
+      <% if current_user.id == @user.id %>
+        <% if @stay_items.present? %>
+          <%= paginate @stay_items %>
+        <% end %>
+      <% else %>
+        <% if @stay_items_for_user.present? %>
+          <%= paginate @stay_items_for_user %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
