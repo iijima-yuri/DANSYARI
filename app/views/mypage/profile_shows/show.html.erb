@@ -24,7 +24,7 @@
             <% end %>
           </div>
           <div>
-            <p class="mt-10 mb-3 text-3xl"><%= @user.name %></p>
+            <p class="pt-3 mb-3 text-3xl sm:pt-0"><%= @user.name %></p>
             <%= link_to follows_user_path(@user) do %>
               <p class="mb-1 text-xl"><%= t('mypage.profiles.show.follow') %><%= @user.followers.count %>人</p>
             <% end %>
