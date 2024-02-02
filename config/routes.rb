@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: %i[new create show index] do
+  resources :users, only: %i[new create] do
     member do
       get 'favorites'
       get 'follows', to: 'relationships#followings'
@@ -59,7 +59,11 @@ Rails.application.routes.draw do
 
   resources :notifications, only: %i[index]
 
-  resources :chat_rooms, only: %i[index show create destroy]
+  resources :chat_rooms, only: %i[show create] do
+    collection do
+      get 'entrance', to: 'chat_rooms#entrance'
+    end
+  end
 
   resources :genres, only: %i[new index create]
 end
