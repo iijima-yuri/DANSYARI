@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_24_173731) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_25_023603) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -111,6 +111,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_173731) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "message_id"
+    t.integer "chat_room_id"
     t.index ["comment_id"], name: "index_notifications_on_comment_id"
     t.index ["item_id"], name: "index_notifications_on_item_id"
     t.index ["visited_id"], name: "index_notifications_on_visited_id"

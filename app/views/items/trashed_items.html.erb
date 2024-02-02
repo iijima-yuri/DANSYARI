@@ -18,6 +18,15 @@
           <% end %>
         <% end %>
       </div>
+      <% if current_user.id == @user.id %>
+        <% if @trashed_items.present? %>
+          <%= paginate @trashed_items %>
+        <% end %>
+      <% else %>
+        <% if @trashed_items_for_user.present? %>
+          <%= paginate @trashed_items_for_user %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

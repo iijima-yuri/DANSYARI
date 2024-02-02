@@ -58,20 +58,20 @@ class ItemsController < ApplicationController
 
   def trashed_items
     @user = User.find(params[:id])
-    @trashed_items = Item.where(user_id: current_user.id, reason_status: 'trash')
-    @trashed_items_for_user = Item.where(user_id: params[:id], reason_status: 'trash')
+    @trashed_items = Item.where(user_id: current_user.id, reason_status: 'trash').order(created_at: :desc).page(params[:page]).per(6)
+    @trashed_items_for_user = Item.where(user_id: params[:id], reason_status: 'trash').order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def stay_items
     @user = User.find(params[:id])
-    @stay_items = Item.where(user_id: current_user.id, reason_status: 'stay')
-    @stay_items_for_user = Item.where(user_id: params[:id], reason_status: 'stay')
+    @stay_items = Item.where(user_id: current_user.id, reason_status: 'stay').order(created_at: :desc).page(params[:page]).per(6)
+    @stay_items_for_user = Item.where(user_id: params[:id], reason_status: 'stay').order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def worry_items
     @user = User.find(params[:id])
-    @worry_items = Item.where(user_id: current_user.id, reason_status: 'worry')
-    @worry_items_for_user = Item.where(user_id: params[:id], reason_status: 'worry')
+    @worry_items = Item.where(user_id: current_user.id, reason_status: 'worry').order(created_at: :desc).page(params[:page]).per(6)
+    @worry_items_for_user = Item.where(user_id: params[:id], reason_status: 'worry').order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def all_items

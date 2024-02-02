@@ -21,7 +21,6 @@ ja:
     reason: '理由：'
     tag: 'タグ：'
     genres: 'ジャンル：'
-    user_name: 'ユーザー名：'
     follow: 'フォローする'
     unfollow: 'フォローを外す' 
     edit: '編集'
@@ -53,12 +52,6 @@ ja:
     favorites:
       title: 'いいね一覧'
       no_result: 'いいねがありません'
-    index:
-      title: 'チャットできるユーザ一覧（フォローしているユーザー）'
-    show:
-      title: 'ユーザー'
-      chat_continue: 'チャットを続ける'
-      chat_start: 'チャットを始める'
   user_sessions:
     new:
       title: 'ログイン'
@@ -141,8 +134,8 @@ ja:
     index:
       no_result: '通知はありません'
   chat_rooms:
-    index:
-      title: 'メッセージ一覧'
+    entrance:
+      title: 'チャットできるユーザ一覧（フォローしているユーザー）'
     show:
       title: 'チャットルーム'
   contacts:
