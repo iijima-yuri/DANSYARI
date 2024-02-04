@@ -1,5 +1,10 @@
 <div class="mb-5">
-  <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc]">
+  <ul class="p-5 border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc] flex items-center w-[325px] h-[200px]">
+    <li>
+      <%= link_to (current_user == user ? mypage_profile_path(current_user) : mypage_profile_show_path(user)) do %>
+        <%= image_tag user.icon.url, size: '150x150', class:"rounded-full mr-5" %>
+      <% end %>
+    </li>
     <li class="pb-1 text-xl font-bold">
       <%= link_to (current_user == user ? mypage_profile_path(current_user) : mypage_profile_show_path(user)) do %>
         <%= user.name %>
