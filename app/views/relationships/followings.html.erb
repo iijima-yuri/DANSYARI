@@ -1,4 +1,4 @@
-<div class="bg-[#f5eace]">
+<div class="bg-[#f5eace] grow">
 <%= render 'shared/header' %>
   <div>
     <div class="container mx-auto">
@@ -7,7 +7,7 @@
         <% if @users.present? %>
           <%= render partial: 'follow_user', collection: @users, as: :user %>
         <% else %>
-          <p><%= t('.no_result') %></p>
+          <p><%= t('.no_result') %><br>フォローしてみましょう！</p>
         <% end %>
       </div>
     </div>

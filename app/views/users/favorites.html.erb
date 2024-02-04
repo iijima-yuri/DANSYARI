@@ -1,5 +1,5 @@
 <% content_for(:title, t('.title')) %>
-<div class="bg-[#f5eace]">
+<div class="bg-[#f5eace] grow">
 <%= render 'shared/header' %>
   <div>
     <div class="container mx-auto">
@@ -8,7 +8,7 @@
         <% if @favorite_items.present? %>
           <%= render partial: 'favorite', collection: @favorite_items, as: :item %>
         <% else %>
-          <p><%= t('.no_result') %></p>
+          <p><%= t('.no_result') %><br><%= link_to "他の人の投稿", items_path, class: "underline pointer text-xl font-bold"%>を見て、いいねしてみましょう！</p>
         <% end %>
       </div>
       <%= paginate @favorite_items %>

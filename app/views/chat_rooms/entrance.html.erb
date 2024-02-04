@@ -1,17 +1,23 @@
-<div class="bg-[#f5eace]">
+<%= content_for(:title, t('.title')) %>
+<div class="bg-[#f5eace] grow">
 <%= render 'shared/header' %>
   <div>
     <div class="container mx-auto">
       <h1 class="secondary-title"><%= t('.title') %></h1>
-      <div class="grid grid-cols-1 gap-10 pb-6 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto place-content-center place-items-center">
+      <ul class="grid grid-cols-1 gap-4 pb-6 lg:grid-cols-3 md:grid-cols-2 auto-rows-auto place-content-center place-items-center">
           <% if logged_in? %>
-            <% @followers.each do |follower| %>
-              <%= link_to chat_room_path(follower.followed.id) do %>
-                <%= "#{follower.followed.name}" %>
+            <% if @followers.present? %>
+              <% @followers.each do |follower| %>
+                <%= link_to chat_room_path(follower.followed.id) , class:"border-4 border-[#5b4744] border-dashed rounded-3xl shadow-xl bg-[#eee5bc] flex items-center w-[325px] h-[200px] p-5 mb-8" do %>
+                  <li><%= image_tag follower.followed.icon.url, size: '150x150', class:"rounded-full mr-5" %></li>
+                  <li class="text-xl font-bold"><%= "#{follower.followed.name}" %></li>
+                <% end %>
               <% end %>
+            <% else %>
+              <p><%= t('.no_result') %><br>フォローして、チャットましょう！</p>
             <% end %>
           <% end %>
-      </div>
+      </ul>
     </div>
   </div>
 </div>

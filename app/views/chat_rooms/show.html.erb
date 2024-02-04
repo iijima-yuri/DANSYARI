@@ -3,7 +3,8 @@
     import consumer from 'channels/action_cable';
   </script>
 <% end %>
-<div class="bg-[#f5eace]">
+<%= content_for(:title, t('.title')) %>
+<div class="bg-[#f5eace] grow">
 <%= render 'shared/header' %>
   <div>
     <div class="container md:mx-auto">
@@ -22,14 +23,13 @@
           <% end %>
       <% end %>
       
-      <div class="lg:ml-48" id='messages'>
+      <div class="lg:mr-24 md:mx-12 lg:ml-48" id='messages'>
         <div id="chats" data-id ="<%= @chat_room.id %>">
           <%= render partial: 'chat_rooms/message',collection: @messages, as: :message %>
         </div>
       </div>
-      <form class="mx-10 md:mx-auto" id="target">
-        <label class="font-bold talk-form">Say something:</label><br>
-        <input type = "text" class="mb-10 w-52 sm:w-9/12 md:w-10/12 lg:w-11/12" id ="talk-form" placeholder="メッセージ" data-behavior = "chat_room_speaker" data-user = "<%= current_user.id %>" data-room = "<%= @chat_room.id %>">
+      <form class="mx-10 text-center md:mx-auto lg:ml-48 lg:text-start" id="target">
+        <input type = "text" class="mb-10 w-52 sm:w-9/12 md:w-10/12" id ="talk-form" placeholder="メッセージ" data-behavior = "chat_room_speaker" data-user = "<%= current_user.id %>" data-room = "<%= @chat_room.id %>">
         <button type="button" id="send-button" class="px-5 py-2 text-xl font-bold text-white transition-all duration-300 bg-green-500 rounded cursor-pointer hover:bg-green-600 text-end">送信</button>
       </form>
     </div>

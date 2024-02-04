@@ -1,4 +1,5 @@
-<div class="bg-[#f5eace]">
+<%= content_for(:title, t('.title')) %>
+<div class="bg-[#f5eace] grow">
 <% if logged_in? %>
   <%= render 'shared/header' %>
 <% else %>
@@ -11,7 +12,8 @@
         <% if  @search_results.present? %>
           <%= render @search_results %>
         <% else %>
-          <p><%= t('.no_result') %></p>
+          <p><%= t('.no_result') %><br>
+          <%= link_to "他の人の投稿", items_path, class: "underline pointer text-xl font-bold"%>を見てみましょう！</p>
         <% end %>
       </div>
     </div>

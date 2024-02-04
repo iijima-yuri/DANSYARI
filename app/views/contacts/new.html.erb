@@ -1,5 +1,5 @@
 <%= content_for(:title, t('.title')) %>
-<div class="bg-[#f5eace]">
+<div class="bg-[#f5eace] grow">
 <% if logged_in? %>
   <%= render 'shared/header' %>
 <% else %>
@@ -12,6 +12,7 @@
         <%= form_with model: @contact, local: true, url: confirm_contacts_path, data: { turbo: false } do |f| %>
           <div class="form-group">
             <%= f.label :name, Contact.human_attribute_name(:name), class:"font-bold text-xl" %><br>
+            <% binding.pry %>
             <%= f.text_field :name, class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 w-4/5", placeholder: 'eri' %>
           </div>
           <div class="form-group">
