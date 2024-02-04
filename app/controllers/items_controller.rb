@@ -114,6 +114,10 @@ class ItemsController < ApplicationController
     respond_to(&:js)
   end
 
+  def private_items
+    @private_items = current_user.items.unpublished.order(created_at: :desc).page(params[:page]).per(6)
+  end
+
   private
 
   def set_item

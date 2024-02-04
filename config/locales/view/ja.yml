@@ -96,6 +96,10 @@ ja:
       no_result: '悩み中の品物はありません'
     all_items:
       title: '思い出の品物一覧'
+      no_result: '思い出の品物がありません'
+    private_items:
+      title: '非公開の思い出の品物一覧'
+      no_result: '非公開の思い出の品物はありません'
     search_tag:
       title: '検索結果（タグ）'
       no_result: 'タグはありません'
@@ -115,6 +119,7 @@ ja:
         good: 'いいね一覧'
         chat_room: 'チャットルーム'
         items_list: '思い出の品物一覧'
+        private_item_list: '非公開の思い出の品物一覧'
         follow: 'フォロー中：'
         follower: 'フォロワー：'
         edit_account: 'アカウント変更'
@@ -136,6 +141,7 @@ ja:
   chat_rooms:
     entrance:
       title: 'チャットできるユーザ一覧（フォローしているユーザー）'
+      no_result: 'チャットできるユーザ一がいません'
     show:
       title: 'チャットルーム'
   contacts:
