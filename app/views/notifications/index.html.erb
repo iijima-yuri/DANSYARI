@@ -1,8 +1,10 @@
-<%= render 'shared/header' %>
-<% notifications = @notifications.where.not(visitor_id: current_user.id) %>
-<% if notifications.exists? %>
-  <%= render partial: 'notification', collection: @notifications, as: :notification %>
-  <%= paginate notifications %>
-<% else %>
-  <%= t('notification.index.no_result') %>
-<% end %>
+<div class="grow">
+  <%= render 'shared/header' %>
+  <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+  <% if notifications.exists? %>
+    <%= render partial: 'notification', collection: @notifications, as: :notification %>
+    <%= paginate notifications %>
+  <% else %>
+    <%= t('notification.index.no_result') %>
+  <% end %>
+</div>

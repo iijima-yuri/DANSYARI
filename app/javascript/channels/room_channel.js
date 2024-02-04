@@ -11,19 +11,15 @@ document.addEventListener('turbo:load', function() {
     {channel: "RoomChannel", chat_rooms: chatRoomId}, {
     connected() {
       // Called when the subscription is ready for use on the server
-      console.log('WebSocketが接続されました');
     },
 
     disconnected() {
       // Called when the subscription has been terminated by the server
-      console.log('WebSocketが切断されました');
     },
 
     received: function(data) {
       // Called when there's incoming data on the websocket for this channel
-      console.log('データが受信されました:', data);
       const messages = document.getElementById('messages');
-      console.log(messages);
       messages.insertAdjacentHTML('beforeend', data['message']);
     },
 
@@ -41,8 +37,13 @@ document.addEventListener('turbo:load', function() {
       formInput.value = '';
       event.preventDefault();
     });
-
-  } else {
-    console.log("このページではAction Cableが接続されていません。");
+    
+    formInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        submitButton.dispatchEvent(new PointerEvent("click"));
+        e.preventDefault();
+      }  
+      return false;
+    });
   }
 });

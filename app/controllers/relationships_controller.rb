@@ -3,6 +3,11 @@ class RelationshipsController < ApplicationController
 
   def create
     current_user.follow(params[:user_id])
+    ActiveRecord::Base.transaction do
+      @chat_room = ChatRoom.create(name: "DM")
+      Entry.create(user_id: current_user.id, chat_room_id: @chat_room.id)
+      Entry.create(user_id: params[:user_id], chat_room_id: @chat_room.id)
+    end
     User.find(params[:user_id]).create_notification_follow(current_user)
     redirect_to request.referer
   end

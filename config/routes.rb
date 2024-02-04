@@ -50,6 +50,7 @@ Rails.application.routes.draw do
       get 'search', to: 'items#search', as: :search
     end
     get 'autocomplete', on: :collection, to: 'items#autocomplete'
+    get 'private_item_list', on: :collection, to: 'items#private_items'
   end
 
   namespace :mypage do
