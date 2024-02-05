@@ -7,8 +7,8 @@
           <%= f.text_field :name, class: "form-control w-3/5", id: "item_name", placeholder: "カバン" %>
         </div>
         <div class="pt-3 form-group">
-        <%= image_tag item.item_image.url, id: 'preview', size:'400x400', data: { turbo: false } %>
-        <div id="previews"></div>
+          <%= image_tag item.item_image.url, id: 'preview', size:'400x400', data: { turbo: false } %>
+          <div id="previews"></div>
           <div class="click-upload">
             <%= f.hidden_field :item_image_cache %>
             <%= f.file_field :item_image, class: "form-control mt-3" %>

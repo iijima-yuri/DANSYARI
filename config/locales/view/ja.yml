@@ -39,6 +39,8 @@ ja:
     messages:
       max_size_error: 'ファイルサイズが大きすぎます。最大サイズは %{max_size} です'
   static_pages:
+    top:
+      title: 'トップページ'
     terms_of_service:
       title: '利用規約'
     privacy_policy:
@@ -135,8 +137,9 @@ ja:
     followers:
       title: 'フォロワー一覧'
       no_result: 'ユーザーがいません'
-  notification:
+  notifications:
     index:
+      title: '通知'
       no_result: '通知はありません'
   chat_rooms:
     entrance:
