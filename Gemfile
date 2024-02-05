@@ -104,3 +104,5 @@ end
 gem 'fog-aws'
 
 gem 'dotenv-rails'
+
+gem 'meta-tags'
