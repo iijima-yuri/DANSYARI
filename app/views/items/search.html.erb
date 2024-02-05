@@ -1,4 +1,4 @@
-<%= content_for(:title, t('.title')) %>
+<% set_meta_tags title: t('.title') %>
 <div class="bg-[#f5eace] grow">
 <% if logged_in? %>
   <%= render 'shared/header' %>

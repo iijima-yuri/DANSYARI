@@ -3,7 +3,7 @@
     import consumer from 'channels/action_cable';
   </script>
 <% end %>
-<%= content_for(:title, t('.title')) %>
+<% set_meta_tags title: t('.title') %>
 <div class="bg-[#f5eace] grow">
 <%= render 'shared/header' %>
   <div>
