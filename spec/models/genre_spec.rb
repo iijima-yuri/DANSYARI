@@ -5,7 +5,7 @@ RSpec.describe Genre, type: :model do
     it '無効であること' do
       genre = build(:genre, name: nil)
       expect(genre).to be_invalid
-      expect(genre.errors[:name]).to include('を選択してください')
+      expect(genre.errors[:name]).to include('を入力してください')
     end
   end
 end

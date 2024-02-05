@@ -3,7 +3,5 @@ FactoryBot.define do
     body { 'Comment' }
     association :user
     association :item
-    association :commentable
-    association :notification
   end
 end
