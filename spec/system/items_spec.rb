@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Items", type: :system do
   let(:user) { create(:user) }
-  let(:item) { create(:item, user: user) }
+  let(:item) { create(:item, user:) }
   let(:other_item) { create(:item) }
 
   describe '思い出の品物' do
@@ -51,7 +51,6 @@ RSpec.describe "Items", type: :system do
         end
       end
 
-
       describe 'ログイン後' do
         before { login(user) }
         context '他人の詳細ページ' do
@@ -86,7 +85,6 @@ RSpec.describe "Items", type: :system do
       end
     end
   end
-
 
   describe '思い出の品物の作成' do
     context 'ログイン前' do

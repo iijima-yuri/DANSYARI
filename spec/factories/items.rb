@@ -7,6 +7,6 @@ FactoryBot.define do
     status { "published" }
     association :user
     association :genre
-    item_image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.png'))}
+    item_image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.png')) }
   end
 end
