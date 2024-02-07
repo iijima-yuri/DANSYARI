@@ -71,7 +71,5 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: %i[new create edit update]
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: '/letter_opener'
-  end
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

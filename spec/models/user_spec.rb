@@ -56,7 +56,7 @@ RSpec.describe User, type: :model do
       it '無効であること' do
         user = build(:user, password_confirmation: '12345678')
         expect(user).to be_invalid
-        expect(user.errors[:password_confirmation]).to include ('とパスワードの入力が一致しません')
+        expect(user.errors[:password_confirmation]).to include('とパスワードの入力が一致しません')
       end
     end
   end
