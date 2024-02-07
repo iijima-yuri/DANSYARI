@@ -64,6 +64,8 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+
+  gem 'letter_opener_web', '~> 2.0'
 end
 
 group :test do
@@ -108,3 +110,5 @@ gem 'fog-aws'
 gem 'dotenv-rails'
 
 gem 'meta-tags'
+
+gem 'config'
