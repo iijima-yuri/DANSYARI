@@ -1,0 +1,15 @@
+<% set_meta_tags title: t('.title') %>
+<div class="bg-[#f5eace] grow">
+<%= render 'shared/before_login_header' %>
+  <div class="container mx-auto">
+    <h1 class="secondary-title"><%= t('.title') %></h1>
+    <div class="mx-10">
+      <p>パスワード変更用のURLをメールで送信します</p>
+      <p class="pb-2">登録しているメールアドレスを入力してください</p>
+      <%= form_with url: password_resets_path do |f| %>
+        <%= f.email_field :email, placeholder:"メールアドレス", class: "form-control rounded focus:ring-gray-500 focus:border-gray-500 mb-5 md:w-2/5 w-11/12"%>
+        <%= f.submit t('defaults.application'), class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-4 py-2 px-20 font-bold text-xl text-end" %>
+      <% end %>
+    </div>
+  </div>
+</div>

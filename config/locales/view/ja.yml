@@ -25,7 +25,10 @@ ja:
     unfollow: 'フォローを外す' 
     edit: '編集'
     destroy: '削除'
-    registration: "確認"
+    registration: '確認'
+    application: '申請'
+    reset: 'リセット'
+    password_reset: 'パスワードの再設定'
     message:
       require_login: 'ログインしてください'
       created: '%{item}を作成しました'
@@ -35,6 +38,8 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
+      password_reset_setting: 'パスワードリセットのメールを送信しました'
+      password_reset_finish: '新しいパスワードが設定されました'
   errors:
     messages:
       max_size_error: 'ファイルサイズが大きすぎます。最大サイズは %{max_size} です'
@@ -159,3 +164,8 @@ ja:
       back: '戻る'
     done:
       title: 'お問い合わせ（完了）'
+  password_resets:
+    new:
+      title: 'パスワードリセット（申請）'
+    edit:
+      title: 'パスワードリセット（再設定）'
