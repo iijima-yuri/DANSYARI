@@ -1,6 +1,6 @@
 <%= form_with model: item, local: true, id: "new_item" do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
-    <div class="-mx-2 md:flex">
+    <div class="md:flex">
       <div class="px-10 mb-8 md:w-1/2">
         <div class="form-group">
           <%= f.label :name, Item.human_attribute_name(:name) %>
@@ -11,7 +11,7 @@
           <div id="previews"></div>
           <div class="click-upload">
             <%= f.hidden_field :item_image_cache %>
-            <%= f.file_field :item_image, class: "form-control mt-3" %>
+            <%= f.file_field :item_image, class: "form-control mt-3 w-full" %>
           </div>
         </div>
       </div>
