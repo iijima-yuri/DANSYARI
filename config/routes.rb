@@ -66,10 +66,10 @@ Rails.application.routes.draw do
   end
 
   resources :genres, only: %i[new index create]
-  get 'genres/index'
-  get 'genres/create'
 
   resources :password_resets, only: %i[new create edit update]
+
+  get '*path', to: 'application#render404'
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
