@@ -112,3 +112,5 @@ gem 'dotenv-rails'
 gem 'meta-tags'
 
 gem 'config'
+
+gem 'exception_notification'
