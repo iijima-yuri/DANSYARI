@@ -54,6 +54,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (7.1.1)
       activesupport (= 7.1.1)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (7.1.1)
       activemodel (= 7.1.1)
       activesupport (= 7.1.1)
@@ -124,6 +128,8 @@ GEM
       dry-validation (~> 1.0, >= 1.0.0)
     connection_pool (2.4.1)
     crass (1.0.6)
+    cssbundling-rails (1.4.0)
+      railties (>= 6.0.0)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -272,6 +278,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mutex_m (0.1.2)
+    nested_form (0.3.2)
     net-imap (0.4.3)
       date
       net-protocol
@@ -348,6 +355,12 @@ GEM
     rails-i18n (7.0.8)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
+    rails_admin (3.1.2)
+      activemodel-serializers-xml (>= 1.0)
+      kaminari (>= 0.14, < 2.0)
+      nested_form (~> 0.3)
+      rails (>= 6.0, < 8)
+      turbo-rails (~> 1.0)
     railties (7.1.1)
       actionpack (= 7.1.1)
       activesupport (= 7.1.1)
@@ -422,6 +435,14 @@ GEM
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.14.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -454,6 +475,7 @@ GEM
     tailwindcss-rails (2.0.32-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.3.0)
+    tilt (2.3.0)
     timeout (0.4.0)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
@@ -487,6 +509,7 @@ DEPENDENCIES
   capybara
   carrierwave (~> 3.0)
   config
+  cssbundling-rails
   debug
   dockerfile-rails (>= 1.5)
   dotenv-rails
@@ -505,6 +528,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.1)
   rails-i18n
+  rails_admin (~> 3.1.2)
   ransack (~> 4.1.1)
   redis (~> 5.0)
   rspec-rails
@@ -512,6 +536,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  sassc-rails
   selenium-webdriver
   sentry-rails (~> 5.12)
   sentry-ruby (~> 5.12)

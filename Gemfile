@@ -114,3 +114,9 @@ gem 'meta-tags'
 gem 'config'
 
 gem 'exception_notification'
+
+gem 'rails_admin', '~> 3.1.2'
+
+gem "cssbundling-rails"
+
+gem "sassc-rails"
