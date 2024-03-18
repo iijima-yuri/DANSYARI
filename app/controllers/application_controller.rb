@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def render500(error = nil)
     Rails.logger.error("❌#{error.message}") if error
-    render 'errors/render500', status: :internal_server_error
+    render 'errors/error500', status: :internal_server_error
   end
 
   private
