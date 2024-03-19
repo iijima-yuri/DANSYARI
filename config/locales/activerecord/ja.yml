@@ -16,6 +16,12 @@ ja:
       tag: 'タグ'
       contact: 'お問い合わせ'
       genre: 'ジャンル'
+      chat_room: 'チャットルーム'
+      entry: 'エントリー'
+      favorite: 'お気に入り'
+      message: 'メッセージ'
+      notification: '通知'
+      relationship: 'フォロー'
     attributes:
       user:
         email: 'メールアドレス'
