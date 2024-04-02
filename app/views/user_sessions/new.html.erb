@@ -29,9 +29,9 @@
           <%= f.submit t('defaults.login'), class: "bg-green-500 hover:bg-green-600 transition-all duration-300 text-white rounded px-10 py-3 px-20 font-bold mt-10 text-xl"%>
         <% end %>
       </div>
-      <%# <div class="mt-20 text-center"> %>
-        <%# <%= link_to t('.google_login'), "#", class: "hover:text-white h-10 text-2xl font-bold" %>
-      <%# </div>  %>
+      <div class="mt-20 text-center">
+        <%= link_to 'Google ログイン', auth_at_provider_path(provider: :google), class: "hover:text-white h-10 text-2xl font-bold text-red" %>
+      </div> 
     </div>
   </div>
 </div>
